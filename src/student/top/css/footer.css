@@ -1,0 +1,17 @@
+
+/**********************
+        footer
+ **********************/
+ footer{
+  height: 75px;
+  background-color: #52A49A;
+  position: relative;
+  display: flex;
+}
+footer ul{
+  color: #fff;
+  font-size: 12px;
+}
+.footer_logo img{
+  width: 170px;
+}

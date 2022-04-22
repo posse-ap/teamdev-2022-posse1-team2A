@@ -1,0 +1,157 @@
+
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0%;
+  background-color: #EBEDF1;
+}
+main {
+  padding-top: 50px;
+  text-align: center;
+}
+.white {
+  color: white;
+}
+
+/**********************
+        header 
+ **********************/
+ header{
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+.header_container{
+ height: 50px;
+ background-color: #52A49A;
+ position: relative;
+}
+.header_logo {
+ height: 50%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+}
+.header_logo img{
+ height: 100%;
+}
+.list_icon{
+ position: absolute;
+ top: 50%;
+ right: 5%;
+ transform: translate(0%,-50%);
+ color: #fff;
+ text-align: center;
+}
+.list_icon p{
+ font-size: 0.3em;
+ padding-top: .3em;
+}
+
+/**********************
+        main 
+ **********************/
+/*----- search -----*/
+.search_wrapper {
+  background-color: #52A49A;
+  margin: 15px;
+  padding: 10px;
+}
+.sort_title {
+  background-color: #E3FFFC;
+  border: solid 1px #235751;
+  border-radius: 5px;
+  color: #235751;
+  /* display: flex; */
+  text-align: center;
+  position: relative;
+}
+.sort_title h2{
+  font-size: 18px;
+}
+.sort_title i{
+  color: #52A49A;
+  position: absolute;
+  top: 25%;
+  right: 10%;
+}
+.sort_option_container {
+  display: none;
+}
+
+
+.search_button{
+  background-color: #F3AE56;
+  margin-top: 10px;
+  padding: .3em;
+  text-align: center;
+  border-radius: 5px;
+}
+.search_button p{
+  font-size: 24px;
+  color: #fff;
+}
+
+
+/*----- ranking -----*/
+.ranking_container {
+  margin: 15px;
+}
+.ranking_title {
+  color: #235751;
+  font-size: 18px;
+}
+.ranking_area{
+  display: flex;
+  overflow-x: scroll;
+}
+.ranking_card {
+  width: 130px;
+  height: 165px;
+  margin: 10px 10px;
+  background-color: #fff;
+  flex-shrink: 0;
+}
+.ranking_card img{
+  width: 130px;
+  height: 85px;
+  background-color: aqua;
+}
+.ranking_card button{
+  height: 1.2rem;
+  font-size: 8px;
+  background-color: #F3AE56;
+  color: #fff;
+}
+
+.agent_link {
+  color: #235751;
+}
+
+
+/*----- column -----*/
+.column_wrapper {
+  padding: 15px;
+}
+.column_container {
+  margin-bottom: 15px;
+  text-align: left;
+  background-color: #fff;
+}
+.column_container h2{
+  padding: 10px;
+  background-color: #52A49A;
+  color: #fff;
+  font-size: 20px;
+}
+.column_container p {
+  padding: 10px;
+}
+
+/*----- agentList page -----*/
+
+
+
+

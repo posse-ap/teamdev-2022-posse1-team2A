@@ -96,6 +96,7 @@
   height: 108px;
 }
 .modal_agent_delete{
+  padding: .2em;
   position: absolute;
   top: 50%;
   right: 5%;
@@ -103,6 +104,8 @@
   font-size: 12px;
   font-weight: bold;
   transform: translateY(-50%);
+  border-radius: 5px;
+  border: #235751 1px solid;
 }
 
 .modal_bottom button{

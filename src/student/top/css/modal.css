@@ -104,8 +104,8 @@
   font-size: 12px;
   font-weight: bold;
   transform: translateY(-50%);
-  border: #235751 1px solid;
   border-radius: 5px;
+  border: #235751 1px solid;
 }
 
 .modal_bottom button{

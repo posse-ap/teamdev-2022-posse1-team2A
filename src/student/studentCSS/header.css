@@ -1,4 +1,39 @@
 
+/**********************
+        header 
+ **********************/
+ header{
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+.header_container{
+ height: 50px;
+ background-color: #52A49A;
+ position: relative;
+}
+.header_logo {
+ height: 50%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+}
+.header_logo img{
+ height: 100%;
+}
+.list_icon{
+ position: absolute;
+ top: 50%;
+ right: 5%;
+ transform: translate(0%,-50%);
+ color: #fff;
+ text-align: center;
+}
+.list_icon p{
+ font-size: 0.3em;
+ padding-top: .3em;
+}
 
 /**********************
         modal 

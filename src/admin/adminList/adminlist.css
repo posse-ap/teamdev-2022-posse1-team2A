@@ -1,0 +1,52 @@
+
+body{
+  background-color: #EBEDF1;
+}
+
+.header_container{
+  background-color: #52A49A;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+.option_container_1 , .option_container_2{
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+}
+.admin_username_box{
+  background-color: #F3AE56;
+  padding: .8rem;
+}
+.admin_search_box input{
+  background-color: #F3AE56;
+  padding: .8rem;
+  border: solid 1px;
+}
+.admin_add_button_container {
+  background-color: #52A49A;
+  padding: .8rem;
+}
+.admin_agent_sort_box{
+  background-color: #CFD0D4;
+  padding: 0rem .8rem;
+}
+.admin_month_container{
+  display: flex;
+}
+.admin_month_container p{
+  padding: 0 1rem;
+}
+
+.detail_table{
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.detail_table thead{
+  background-color: #CFD0D4;
+}
+.detail_table td {
+  border: solid 1px;
+  padding: .8rem;
+}

@@ -9,7 +9,7 @@ require "../../dbconnect.php";
 // foreach($getcolumns as $getcolumn){
 //     if(!empty($_POST["input_$getcolumn"])){
 //         try{
-//         $sql  = "INSERT INTO agent_contract_info($getcolumn) VALUES(:A_$getcolumn)";
+//         $sql  = "INSERT INTO agent_info($getcolumn) VALUES(:A_$getcolumn)";
 //         $stmt = $db->prepare($sql);
     
 //         $stmt($getcolumn)->bindParam(":A_$getcolumn", $_POST["input_$getcolumn"], PDO::PARAM_STR);
@@ -45,7 +45,7 @@ try {
         $cv_email = $_POST['cv_email'];
         
     
-        $sql = "INSERT INTO agent_contract_info (contract_date,name,url,address,representative,phone_number,email,image,text,responsible_division,cv_email) VALUES (:contract_date,:name,:url,:address,:representative,:phone_number,:email,:image,:text,:responsible_division,:cv_email)"; // INSERT文を変数に格納。:nameや:categoryはプレースホルダという、値を入れるための単なる空箱
+        $sql = "INSERT INTO agent_info (contract_date,name,url,address,representative,phone_number,email,image,text,responsible_division,cv_email) VALUES (:contract_date,:name,:url,:address,:representative,:phone_number,:email,:image,:text,:responsible_division,:cv_email)"; // INSERT文を変数に格納。:nameや:categoryはプレースホルダという、値を入れるための単なる空箱
         $stmt = $db->prepare($sql); //挿入する値は空のまま、SQL実行の準備をする
         $params = array(':contract_date'=>$contract_date,':name'=>$name,':url'=>$url,':address'=>$address,':representative'=>$representative,':phone_number'=>$phone_number,':email'=>$email,':image'=>$image,':text'=>$text,':responsible_division'=>$responsible_division,':cv_email'=>$cv_email); // 挿入する値を配列に格納する
         // $params = array(':name' => $name, ':category' => $category, ':description' => $description); // 挿入する値を配列に格納する

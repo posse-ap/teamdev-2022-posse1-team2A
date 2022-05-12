@@ -2,9 +2,16 @@
 
 require "../../dbconnect.php";
 
-$agent_data="select * from agent_contract_info;";
+$agent_data="select * from agent_info;";
+$agent_offer_rate="select * from agent_info order by offer_rate desc;";
+$agent_population="select * from agent_info order by population desc;";
+$agent_Num_of_firm="select * from agent_info order by Num_of_firm desc;";
+
 
 $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
+$rate_ranks=$db->query($agent_offer_rate)->fetchAll(PDO::FETCH_ASSOC);
+$popu_ranks=$db->query($agent_population)->fetchAll(PDO::FETCH_ASSOC);
+$firm_ranks=$db->query($agent_Num_of_firm)->fetchAll(PDO::FETCH_ASSOC);
 
 // foreach($agent_infos as $agent_){
 //     // print_r($agent_img);
@@ -86,14 +93,15 @@ $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
                 <div class="modal_content">
                     <h2>ー　リスト内容　ー</h2>
                     <section class="modal_agent_list_wrapper">
-                        <section class="modal_agent_card">
-                            <div class="modal_agent_name">
-                                <h3>リクナビ</h3>
-                                <button class="modal_agent_delete">削除</button>
-                            </div>
-                            <div class="modal_agent_info">
-                    <img src="../../../materials/rikunavi.png" alt="リクナビ">
-                    <p>2023年卒業予定の新卒の皆様と既卒者を対象とした学生と企業を結び付ける、新卒採用の就職情報サイトです。</p>
+
+                <section class="modal_agent_card">
+                    <div class="modal_agent_name">
+                        <h3>リクナビ</h3>
+                        <button class="modal_agent_delete">削除</button>
+                    </div>
+                    <div class="modal_agent_info">
+                        <img src="../../../materials/rikunavi.png" alt="リクナビ">
+                        <p>2023年卒業予定の新卒の皆様と既卒者を対象とした学生と企業を結び付ける、新卒採用の就職情報サイトです。</p>
                     </div>
                 </section>
                 <section class="modal_agent_card">
@@ -176,11 +184,11 @@ $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
         <section class="ranking_container">
             <h2 class="ranking_title">－　内定率ランキング　－</h2>
             <section class="ranking_area">
-                <?php foreach($agent_infos as $agent_info):?>
+                <?php foreach($rate_ranks as $rate_rank):?>
                 <div class="ranking_card">
-                    <img src="../../materials/<?= $agent_info['image']?>">
-                    <h3><?= $agent_info['name']?></h3>
-                    <p>120%</p>
+                    <img src="../../materials/<?= $rate_rank['image']?>">
+                    <h3><?= $rate_rank['name']?></h3>
+                    <p><?=$rate_rank['offer_rate']?>%</p>
                     <button>リストに入れる</button>
                 </div>
                 <?php endforeach;?>
@@ -188,13 +196,13 @@ $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
             </section>
         </section>
         <section class="ranking_container">
-            <h2 class="ranking_title">－　内定率ランキング　－</h2>
+            <h2 class="ranking_title">－　利用者数ランキング　－</h2>
             <section class="ranking_area">
-                <?php foreach($agent_infos as $agent_info):?>
+                <?php foreach($popu_ranks as $popu_rank):?>
                 <div class="ranking_card">
-                    <img src="../../materials/<?= $agent_info['image']?>">
-                    <h3><?= $agent_info['name']?></h3>
-                    <p>120%</p>
+                    <img src="../../materials/<?= $popu_rank['image']?>">
+                    <h3><?= $popu_rank['name']?></h3>
+                    <p><?= $popu_rank['population']?>人</p>
                     <button>リストに入れる</button>
                 </div>
                 <?php endforeach;?>
@@ -202,13 +210,13 @@ $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
             </section>
         </section>
         <section class="ranking_container">
-            <h2 class="ranking_title">－　内定率ランキング　－</h2>
+            <h2 class="ranking_title">－　保有求人数　－</h2>
             <section class="ranking_area">
-                <?php foreach($agent_infos as $agent_info):?>
+                <?php foreach($firm_ranks as $firm_rank):?>
                 <div class="ranking_card">
-                    <img src="../../materials/<?= $agent_info['image']?>">
-                    <h3><?= $agent_info['name']?></h3>
-                    <p>120%</p>
+                    <img src="../../materials/<?= $firm_rank['image']?>">
+                    <h3><?= $firm_rank['name']?></h3>
+                    <p><?= $firm_rank['Num_of_firm']?>社</p>
                     <button>リストに入れる</button>
                 </div>
                 <?php endforeach;?>

@@ -44,8 +44,25 @@ main {
 }
 .sort_option_container {
   display: none;
+  position: relative;
+  text-align: center;
 }
 
+.gyoukai_title{
+  position: relative;
+}
+
+.gyoukai_title i{
+  color:white;
+  position: absolute;
+  top: 25%;
+  right: 10%;
+}
+
+.sort_title i.rotate{
+  transform:rotate(-180deg);
+  top: 64%;
+}
 
 .search_button{
   background-color: #F3AE56;
@@ -59,7 +76,27 @@ main {
   color: #fff;
 }
 
+.area_section{
+  position: relative;
+}
 
+.area_section i{
+  color:white;
+  position: absolute;
+  top: 25%;
+  right: 10%;
+}
+
+.picky_title{
+  position: relative;
+}
+
+.picky_title i{
+  color:white;
+  position: absolute;
+  top: 25%;
+  right: 10%;
+}
 /*----- ranking -----*/
 .ranking_container {
   margin: 15px;

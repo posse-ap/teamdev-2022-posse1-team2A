@@ -1,7 +1,7 @@
 <?php
 require "../../dbconnect.php";
 
-$agent_data="select * from agent_contract_info;";
+$agent_data="select * from agent_info;";
 
 $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
 

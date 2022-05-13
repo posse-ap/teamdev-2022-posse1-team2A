@@ -121,7 +121,8 @@ main {
   height: 85px;
   /* background-color: aqua; */
 }
-.ranking_card button{
+
+.ranking_card form button{
   height: 1.2rem;
   font-size: 8px;
   background-color: #F3AE56;

@@ -13,6 +13,34 @@ $rate_ranks=$db->query($agent_offer_rate)->fetchAll(PDO::FETCH_ASSOC);
 $popu_ranks=$db->query($agent_population)->fetchAll(PDO::FETCH_ASSOC);
 $firm_ranks=$db->query($agent_Num_of_firm)->fetchAll(PDO::FETCH_ASSOC);
 
+
+$name = isset($_POST['name'])? htmlspecialchars($_POST['name'], ENT_QUOTES, 'utf-8') : '';
+$intro = isset($_POST['intro'])? htmlspecialchars($_POST['intro'], ENT_QUOTES, 'utf-8') : '';
+$image = isset($_POST['image'])? htmlspecialchars($_POST['image'], ENT_QUOTES, 'utf-8') : '';
+$delete_name = isset($_POST['delete_name'])? htmlspecialchars($_POST['delete_name'], ENT_QUOTES, 'utf-8') : '';
+
+session_start();
+//配列に入れるには、$name,$count,$priceの値が取得できていることが前提なのでif文で空のデータを排除する
+if($delete_name != '') unset($_SESSION['agentLists'][$delete_name]);
+if($name!=''&&$intro!=''&&$image!=''){
+    $_SESSION['agentLists'][$name]=[
+        'intro' => $intro,
+        'image' => $image
+    ];
+}
+$agentLists = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
+
+// if(isset($agentLists)){
+//     foreach($agentLists as $key => $agentList){
+//         echo $key;
+//         echo "<br>";
+//         echo $agentList['intro'];
+//         echo "<br>";
+//         echo $agentList['image'];
+//         echo "<br>";
+//     }
+// }
+
 // foreach($agent_infos as $agent_){
 //     // print_r($agent_img);
 //     $agent_imgs[]=$agent_img['image'];
@@ -93,48 +121,22 @@ $firm_ranks=$db->query($agent_Num_of_firm)->fetchAll(PDO::FETCH_ASSOC);
                 <div class="modal_content">
                     <h2>ー　リスト内容　ー</h2>
                     <section class="modal_agent_list_wrapper">
-
-                <section class="modal_agent_card">
-                    <div class="modal_agent_name">
-                        <h3>リクナビ</h3>
-                        <button class="modal_agent_delete">削除</button>
-                    </div>
-                    <div class="modal_agent_info">
-                        <img src="../../../materials/rikunavi.png" alt="リクナビ">
-                        <p>2023年卒業予定の新卒の皆様と既卒者を対象とした学生と企業を結び付ける、新卒採用の就職情報サイトです。</p>
-                    </div>
-                </section>
-                <section class="modal_agent_card">
-                    <div class="modal_agent_name">
-                        <h3>リクナビ</h3>
-                        <button class="modal_agent_delete">削除</button>
-                    </div>
-                    <div class="modal_agent_info">
-                        <img src="../../../materials/rikunavi.png" alt="リクナビ">
-                        <p>2023年卒業予定の新卒の皆様と既卒者を対象とした学生と企業を結び付ける、新卒採用の就職情報サイトです。</p>
-                    </div>
-                </section>
-                <section class="modal_agent_card">
-                    <div class="modal_agent_name">
-                    <h3>リクナビ</h3>
-                    <button class="modal_agent_delete">削除</button>
-                </div>
-                <div class="modal_agent_info">
-                    <img src="../../../materials/rikunavi.png" alt="リクナビ">
-                    <p>2023年卒業予定の新卒の皆様と既卒者を対象とした学生と企業を結び付ける、新卒採用の就職情報サイトです。</p>
-                </div>
-                </section>
-                <section class="modal_agent_card">
-                    <div class="modal_agent_name">
-                        <h3>リクナビ</h3>
-                        <button class="modal_agent_delete">削除</button>
-                    </div>
-                    <div class="modal_agent_info">
-                        <img src="../../../materials/rikunavi.png" alt="リクナビ">
-                    <p>2023年卒業予定の新卒の皆様と既卒者を対象とした学生と企業を結び付ける、新卒採用の就職情報サイトです。</p>
-                </div>
-            </section>
-        </section>
+                    <?php foreach($agentLists as $name => $agentList): ?>
+                        <section class="modal_agent_card">
+                            <div class="modal_agent_name">
+                                <h3><?=$name?></h3>
+                                <form action="top.php" method="post">
+                                    <input type="hidden" name="delete_name" value="<?= $name; ?>">
+                                    <button type="submit" class="modal_agent_delete">削除</button>
+                                </form>
+                            </div>
+                            <div class="modal_agent_info">
+                                <img src="../../../materials/<?=$agentList['image']?>" alt="リクナビ">
+                                <p><?=$agentList['intro']?></p>
+                            </div>
+                        </section>
+                    <?php endforeach;?>
+                    </section>
                 <section class="modal_bottom">
                     <p>リストの中身を確認し、「まとめて無料申し込み」ボタンを押してください。</p>
                 <button>確認して無料申し込み</button>
@@ -189,7 +191,12 @@ $firm_ranks=$db->query($agent_Num_of_firm)->fetchAll(PDO::FETCH_ASSOC);
                     <img src="../../materials/<?= $rate_rank['image']?>">
                     <h3><?= $rate_rank['name']?></h3>
                     <p><?=$rate_rank['offer_rate']?>%</p>
-                    <button>リストに入れる</button>
+                    <form action="top.php" method="POST">
+                        <input type="hidden" name="name" value="<?= $rate_rank['name']?>">
+                        <input type="hidden" name="intro" value="<?= $rate_rank['text']?>">
+                        <input type="hidden" name="image" value="<?= $rate_rank['image']?>">
+                        <button type="submit">リストに入れる</button>
+                    </form>
                 </div>
                 <?php endforeach;?>
 

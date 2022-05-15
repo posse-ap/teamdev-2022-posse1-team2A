@@ -53,8 +53,56 @@ $student_infos=$db->query($student_data)->fetchAll(PDO::FETCH_ASSOC);
     <title>学生詳細</title>
 </head>
 <body>
-    
 
+    <header>
+        <section class="header_container">admin</section>
+    </header>
+    <main>
+        <div class="detail_close">
+            <button>閉じる</button>
+        </div>
+        <section class="student_detail_top">申し込み情報</section>
+        <section class="student_detail_table_container">
+            <table class="student_detail_table">
+                <tr>
+                    <th>学生氏名</th>
+                    <td>伊藤</td>
+                    <td>博文</td>
+                </tr>
+                <tr>
+                    <th>申し込み日時</th>
+                    <td colspan="2">2022/10/10/23:53</td>
+                </tr>
+                <tr>
+                    <th>大学</th>
+                    <td colspan="2">就活大学</td>
+                </tr>
+                <tr>
+                    <th>学部・学科</th>
+                    <td>就活学部</td>
+                    <td>就活学科</td>
+                </tr>
+                <tr>
+                    <th>卒業年度</th>
+                    <td colspan="2">2024年度</td>
+                </tr>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td colspan="2">sample@sample.com</td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td colspan="2">000-0000-0000</td>
+                </tr>
+                <tr>
+                    <th>住所</th>
+                    <td colspan="2">東京都千代田区永田町１丁目７−１</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    
+    
 <?php foreach($student_infos as $student_info):?>
     <div class="ranking_card">
         <p>--------</p>
@@ -71,5 +119,6 @@ $student_infos=$db->query($student_data)->fetchAll(PDO::FETCH_ASSOC);
 <?php endforeach;?>
 <a href="../../student/application/application.php">申し込み画面へ</a>
 
+<script src=""></script>
 </body>
 </html>

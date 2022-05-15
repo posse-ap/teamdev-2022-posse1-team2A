@@ -110,18 +110,20 @@ DROP TABLE IF EXISTS student_list;
 
 CREATE TABLE student_list (
   id INT AUTO_INCREMENT,
-  apply_time DATE,
-  student_name VARCHAR(200),
+  apply_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+  last_name VARCHAR(200),
+  first_name VARCHAR(200),
   student_email VARCHAR(200),
   student_phone VARCHAR(200),
   college VARCHAR(200),
+  faculty VARCHAR(200),
   department VARCHAR(200),
   graduation_year VARCHAR(200),
   student_address VARCHAR(200),
   PRIMARY KEY(id)
 );
-INSERT INTO student_list (apply_time,student_name,student_email,student_phone,college,department,graduation_year,student_address) values 
-("20010915","藤間裕史","htt://yuji.com","アメリカ合衆国","藤間裕史","849-4783-2489","ugg@gmail.com","picture");
+INSERT INTO student_list (last_name,first_name,student_email,student_phone,college,faculty,department,graduation_year,student_address) values 
+("藤間","裕史","ugkirin@gmail.com","080-4432-3456","慶應義塾大学","商","商","24","アメリカ合衆国");
 
 -- 申し込み数計測テーブル
 
@@ -129,7 +131,7 @@ DROP TABLE IF EXISTS agent_count;
 
 CREATE TABLE agent_count (
   id INT AUTO_INCREMENT,
-  apply_time DATE,
+  apply_time DATETIME DEFAULT CURRENT_TIMESTAMP,
   agent_name VARCHAR(300),
   PRIMARY KEY(id)
 );

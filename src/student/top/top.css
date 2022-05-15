@@ -21,25 +21,30 @@ main {
 /*----- search -----*/
 .search_wrapper {
   background-color: #52A49A;
-  margin: 15px;
+  margin: 20px 80px 10px 80px;
   padding: 10px;
 }
 .sort_title {
   background-color: #E3FFFC;
   border: solid 1px #235751;
-  border-radius: 5px;
+  /* border-radius: 12px; */
   color: #235751;
   /* display: flex; */
   text-align: center;
   position: relative;
+  padding: 10px;
 }
+
+/* 今backgroundcolorが全体についてる（濃い緑）て、細かい選択肢のボックスの周りの色も同じになってるから分けなきゃいけない */
+
+
 .sort_title h2{
   font-size: 18px;
 }
 .sort_title i{
   color: #52A49A;
   position: absolute;
-  top: 25%;
+  top: 40%;
   right: 10%;
 }
 .sort_option_container {
@@ -47,6 +52,52 @@ main {
   position: relative;
   text-align: center;
 }
+
+.gyoukai_title ,.area_title ,.picky_title{
+  background-color: lightgrey;
+  border: solid 2px white;
+  border-radius: 20px;
+  color: white;
+  margin:10px;
+  padding: 8px;
+  /* display: flex; */
+  text-align: center;
+  position: relative;
+}
+
+/* .gyoukai_title{
+	padding-left:24px;
+	position:relative;
+} */
+
+/* .gyoukai_title:before,
+.gyoukai_title:after{
+	content:"";
+	display:block;
+	position:absolute;
+}
+.gyoukai_title:before{
+	width:28px;
+	height:28px;
+	border-radius:14px;
+	background:#ffffff;
+	border:1px solid #000000;
+	left:4;top:2px;
+}
+.gyoukai_title:after{
+	border-left:4px solid #52A49A;
+	border-bottom:4px solid #52A49A;
+	width:16px;
+	height:12px;
+	-webkit-transform:rotate(-45deg);
+	transform:rotate(-45deg);
+	left:16px;
+	top:8px;
+} */
+
+/* .display_none{
+  display: none;
+} */
 
 .gyoukai_title{
   position: relative;

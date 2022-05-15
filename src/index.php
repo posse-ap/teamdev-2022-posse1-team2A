@@ -24,6 +24,7 @@ print_r($events);
     <a href="/student/top/top.php">topPage</a>
     <a href="./admin/add/add.php">register data</a>
     <a href="./student/application/application.php">申し込み画面</a>
+    <a href="./admin/adminList/adminList.php">adminlist</a>
 
 </ul>
 

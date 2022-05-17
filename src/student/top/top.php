@@ -139,7 +139,7 @@ $agentLists = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
                     </section>
                 <section class="modal_bottom">
                     <p>リストの中身を確認し、「まとめて無料申し込み」ボタンを押してください。</p>
-                <button>確認して無料申し込み</button>
+                <button> <a href="../application/application.php">確認して無料申し込み</a> </button>
             </section>
         </div>
         <a href="#!" class="modal_close">×</a>
@@ -199,35 +199,46 @@ $agentLists = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
                     </form>
                 </div>
                 <?php endforeach;?>
-
+                
             </section>
         </section>
         <section class="ranking_container">
             <h2 class="ranking_title">－　利用者数ランキング　－</h2>
             <section class="ranking_area">
                 <?php foreach($popu_ranks as $popu_rank):?>
-                <div class="ranking_card">
-                    <img src="../../materials/<?= $popu_rank['image']?>">
-                    <h3><?= $popu_rank['name']?></h3>
-                    <p><?= $popu_rank['population']?>人</p>
-                    <button>リストに入れる</button>
-                </div>
-                <?php endforeach;?>
-
+                    <div class="ranking_card">
+                        <img src="../../materials/<?= $popu_rank['image']?>">
+                        <h3><?= $popu_rank['name']?></h3>
+                        <p><?= $popu_rank['population']?>人</p>
+                        <form action="top.php" method="POST">
+                            <input type="hidden" name="name" value="<?= $popu_rank['name']?>">
+                            <input type="hidden" name="intro" value="<?= $popu_rank['text']?>">
+                            <input type="hidden" name="image" value="<?= $popu_rank['image']?>">
+                            <button type="submit">リストに入れる</button>
+                        </form>
+                        
+                    </div>
+                    <?php endforeach;?>
+                    
+                </section>
             </section>
-        </section>
-        <section class="ranking_container">
-            <h2 class="ranking_title">－　保有求人数　－</h2>
-            <section class="ranking_area">
-                <?php foreach($firm_ranks as $firm_rank):?>
-                <div class="ranking_card">
-                    <img src="../../materials/<?= $firm_rank['image']?>">
-                    <h3><?= $firm_rank['name']?></h3>
-                    <p><?= $firm_rank['Num_of_firm']?>社</p>
-                    <button>リストに入れる</button>
-                </div>
-                <?php endforeach;?>
-
+            <section class="ranking_container">
+                <h2 class="ranking_title">－　保有求人数　－</h2>
+                <section class="ranking_area">
+                    <?php foreach($firm_ranks as $firm_rank):?>
+                        <div class="ranking_card">
+                            <img src="../../materials/<?= $firm_rank['image']?>">
+                            <h3><?= $firm_rank['name']?></h3>
+                            <p><?= $firm_rank['Num_of_firm']?>社</p>
+                            <form action="top.php" method="POST">
+                                <input type="hidden" name="name" value="<?= $firm_rank['name']?>">
+                                <input type="hidden" name="intro" value="<?= $firm_rank['text']?>">
+                                <input type="hidden" name="image" value="<?= $firm_rank['image']?>">
+                                <button type="submit">リストに入れる</button>
+                            </form>
+                        </div>
+                        <?php endforeach;?>
+                        
             </section>
         </section>
 

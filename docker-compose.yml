@@ -28,3 +28,13 @@ services:
       - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - ./mysql/etc/mysql/conf.d:/etc/mysql/conf.d
       - ./mysql/data:/var/lib/mysql
+  php:
+    build:
+      context: ./
+      dockerfile: php/docker/Dockerfile
+    volumes:
+      - ./php/:/var/www/html/
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025" #webインターフェース用ポート

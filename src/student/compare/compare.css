@@ -1,0 +1,66 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0%;
+  background-color: #EBEDF1;
+}
+main {
+  padding-top: 50px;
+}
+
+/*========================================*/
+.page_back_container {
+  position: relative;
+}
+.page_back {
+  text-align: right;
+}
+.page_back button{
+  margin: 10px;
+  padding: .3em;
+  background-color: #F3AE56;
+  color: #fff;
+  border-radius: 5px;
+}
+
+
+
+
+/*========================================*/
+.compare_table_container {
+  overflow-x: scroll;
+  margin-bottom: 30px;
+  position: relative;
+}
+.compare_table {
+  width: 480px;
+  background-color: #fff;
+}
+.compare_table th {
+  background-color: #E3FFFC;
+  position: sticky;
+  left: 0;
+  writing-mode: tb-rl;
+  display: block;
+  white-space: nowrap;
+}
+.compare_table th,
+.compare_table td{
+  table-layout: fixed;
+  padding: .2rem .5rem;
+  border: solid 1px black;
+  text-align: center;
+  vertical-align: middle;
+}
+.logo td {
+  padding: 0%;
+}
+th{
+  min-height: 85px;
+}
+
+.logo img{
+  width: 140px;
+  height: 85px;
+}
+

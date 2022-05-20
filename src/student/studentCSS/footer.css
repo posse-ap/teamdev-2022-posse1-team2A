@@ -11,7 +11,26 @@
 footer ul{
   color: #fff;
   font-size: 12px;
+  display: block;
+  margin: auto;
 }
+
+.footer_li_first, .footer_li_second{
+  display: flex;
+}
+
+footer li{
+  padding: 0 10px;
+}
+
+.privacy, .goriyou, .otoiawase{
+  border-right: solid;
+}
+
+.footer_logo{
+  margin: auto 4% auto auto;
+}
+
 .footer_logo img{
   width: 170px;
 }

@@ -47,12 +47,11 @@ main {
   top: 40%;
   right: 10%;
 }
-.sort_option_container {
+.sort_section_container {
   display: none;
   position: relative;
   text-align: center;
 }
-
 .gyoukai_title ,.area_title ,.picky_title{
   background-color: lightgrey;
   border: solid 2px white;

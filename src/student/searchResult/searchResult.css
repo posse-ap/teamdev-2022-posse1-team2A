@@ -6,14 +6,15 @@ body {
   }
 
 main{
-    padding-top: 50px;
+  padding-top: 50px;
   text-align: center;
+  min-height: calc(100vh - 75px);
 }
 
 .white {
     color: white;
   }
-
+/************ title **************/
 .search_result_title{
     width: 100%;
     height: 80px;
@@ -29,39 +30,47 @@ main{
     color: #52A49A;
 }
 
+/************ cards **************/
 .search_result_card{
-    height: 40%;
-    width: 96%;
-    background-color: white;
-    margin: 0 auto  40px auto;
-    padding: 8px;
-    display: flex;
+  height: 150px;
+  width: 96%;
+  background-color: white;
+  margin: 0 auto  8px auto;
+  padding: 8px;
+  display: flex;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
 }
-
 .search_result_card_img{
-    border: solid;
-    width: 360px;
-    height: 180px;
+  margin-right: 1rem;
+}
+.search_result_card_img img{
+    width: 110px;
+    height: 100%;
     display: block;
 }
 
 .search_result_card_explanation{
     width: 540px;
-    height: 180px;
+    height: 100%;
     display: block;
 }
-
-.search_result_card_comparison, .search_result_card_cart{
-    display: inline-block;
+.search_result_card_buttons{
+  display: flex;
+  justify-content: space-around;
 }
-
-.search_result_card_comparison button{
-    height: 1.2rem;
-  font-size: 8px;
+.search_result_card_comparison{
   background-color: #52A49A;
+  border-radius: 5px;
+}
+.button_comparison{
+  display: flex;
+  padding: .5em;
+  font-size: 8px;
   color: #fff;
 }
-
+.button_comparison p{
+  padding-left: .5em;
+}
 .search_result_card_cart button{
     height: 1.2rem;
   font-size: 8px;

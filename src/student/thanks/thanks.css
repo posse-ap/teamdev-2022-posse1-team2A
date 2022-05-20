@@ -1,0 +1,82 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0%;
+  background-color: #EBEDF1;
+}
+main {
+  padding-top: 50px;
+  text-align: center;
+  height: calc(100vh - 75px);
+  font-weight: bold;
+}
+
+/**********************
+        thanks 
+ **********************/
+
+/******* thanks title *******/
+.thanks_title {
+  margin: 1em;
+  color: #235751;
+  font-size: 24px;
+}
+
+/******* thanks message *******/
+.thanks_message {
+  margin: 30px ;
+  line-height: 1.5;
+}
+.thanks_wrapper i{
+  color: #52A49A;
+}
+
+/******* thanks button *******/
+.button_wrapper p{
+  background-color: #F3AE56;
+  color: #fff;
+  padding: .8em;
+  margin: 30px;
+  border-radius: 5px;
+}
+
+/******** column ********/
+.column_wrapper {
+  width: 90%;
+  margin: auto;
+  padding: 15px;
+  border-top: 1px solid #235751;
+  border-bottom: 1px solid #235751;
+}
+.column_wrapper h1 {
+  color: #235751;
+  font-size: 24px;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  position: relative;
+}
+.column_wrapper h1::before{
+  content: "";
+  width: 8px;
+  height: 1em;
+  background-color: #F3AE56;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+.column_container {
+  margin-bottom: 15px;
+  text-align: left;
+  background-color: #fff;
+}
+.column_container h2{
+  padding: 10px;
+  background-color: #52A49A;
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+}
+.column_container p {
+  padding: 10px;
+}

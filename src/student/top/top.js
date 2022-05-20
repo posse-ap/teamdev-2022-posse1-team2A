@@ -15,6 +15,8 @@ document.getElementById("sort_title_picky").onclick = function() {
     down[2].classList.add("rotate");
   }; 
 
+
+
 //   もう一回押したら閉じるようにする
 
 // let a= document.getElementsByClassName("gyoukai_title");
@@ -22,3 +24,9 @@ document.getElementById("sort_title_picky").onclick = function() {
 // document.getElementByClassName("gyoukai_section").onclick = function() {
 //     a.classList.remove("display_none");
 //   }; 
+
+// let item= document.getElementById("gyoukai_title");
+
+// document.getElementById('sort_option_gyoukai_container').onclick = function() {
+//   item.style.backgroundColor = "#3fb811";
+// };

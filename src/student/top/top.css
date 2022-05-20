@@ -149,6 +149,9 @@ main {
   right: 10%;
 }
 
+input:checked + label {
+  background-color:#52A49A;
+}
 
 /*----- ranking -----*/
 .ranking_container {

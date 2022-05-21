@@ -77,3 +77,57 @@ main{
   background-color: #F3AE56;
   color: #fff;
 }
+
+/************ modal **************/
+.compare_modal_container{
+  z-index: 99;
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
+}
+.compare_modal_wrapper {
+  background-color: #fff;
+  border: solid 1px #aaa;
+  position: relative;
+}
+.compare_modal_header{
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px #aaa;
+  margin-bottom: 5px;
+}
+.compare_modal_title{
+  text-align: left;
+  font-size: 20px;
+  padding-left: .5em;
+}
+.compare_modal_close{
+  margin: 0 .2em;
+  border: solid 1px #aaa;
+}
+.compare_item_wrapper{
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
+}
+.compare_modal_footer {
+  /* border: solid 1px #aaa; */
+  text-align: right;
+  margin-bottom: 5px;
+}
+.compare_modal_footer a{
+  background-color: #F3AE56;
+  color: #fff;
+  font-size: 20px;
+  margin-right: .5em;
+  padding: .2em;
+}
+/*----------  ----------*/
+.compare_item{
+  width: 100px;
+  border: solid 1px #aaa;
+  padding: 5px;
+}
+.compare_item_img_wrapper img{
+  width: 90px;
+}

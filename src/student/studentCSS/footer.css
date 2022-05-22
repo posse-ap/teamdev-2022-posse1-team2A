@@ -8,23 +8,21 @@
   position: relative;
   display: flex;
 }
+
 footer ul{
   color: #fff;
-  font-size: 12px;
-  display: block;
+  font-size: 8px;
+  width: 40% ;
+  flex-wrap: wrap;
   margin: auto;
-}
-
-.footer_li_first, .footer_li_second{
-  display: flex;
+  flex-basis: 50%;
 }
 
 footer li{
-  padding: 0 10px;
-}
-
-.privacy, .goriyou, .otoiawase{
-  border-right: solid;
+  padding: 0.5em 10px;
+  display: inline-block;
+  line-height: 1.4;
+  border-right: 1px solid;
 }
 
 .footer_logo{
@@ -32,5 +30,5 @@ footer li{
 }
 
 .footer_logo img{
-  width: 170px;
+  width: 160px;
 }

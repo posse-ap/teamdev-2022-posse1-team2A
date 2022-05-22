@@ -4,6 +4,7 @@ const comparisonButtons = document.querySelectorAll('.button_comparison');
 const compareModalContainer = document.querySelector('.compare_modal_container');
 const compareItemWrapper = document.querySelector('.compare_item_wrapper');
 const buttonClose = document.getElementsByClassName('compare_modal_close')[0];
+const compareSubmitButton = document.getElementsByClassName('compare_submit_button')[0];
 const formElements = document.forms;  //各カードのform部分を配列で取得
 
 buttonClose.addEventListener('click', modalClose);
@@ -25,6 +26,14 @@ for(let i=0; i<formElements.length; i++){
   });
 }
 
+//モーダルの「比較ページへ」を押したとき
+compareSubmitButton.addEventListener('click', function(){
+  if(compareItemWrapper.childElementCount <= 1){
+    alert('２件以上選択してください');
+  } else {
+    window.open('../compare/compare.html','_blank');
+  }
+});
 
 function addCard(id) {
   const add_code = `

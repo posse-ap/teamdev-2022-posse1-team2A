@@ -96,12 +96,14 @@ main{
   position: relative;
 }
 .compare_modal_header{
+  background-color: #52A49A;
   display: flex;
   justify-content: space-between;
   border: solid 1px #aaa;
   margin-bottom: 5px;
 }
 .compare_modal_title{
+  color: #fff;
   text-align: left;
   font-size: 24px;
   padding-left: .5em;
@@ -109,9 +111,10 @@ main{
 .compare_modal_close{
   margin: auto .2em;
 }
-.compare_modal_close i,
+.compare_modal_close button,
 .compare_item_delete {
   text-align: right;
+  background-color: #fff;
   color: #aaa;
 }
 .compare_item_wrapper{
@@ -123,7 +126,7 @@ main{
   text-align: right;
   margin-bottom: 5px;
 }
-.compare_modal_footer a{
+.compare_modal_footer button{
   background-color: #F3AE56;
   color: #fff;
   font-size: 20px;

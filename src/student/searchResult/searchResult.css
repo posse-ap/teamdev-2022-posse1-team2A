@@ -48,11 +48,15 @@ main{
     height: 100%;
     display: block;
 }
-
+.search_result_card_title{
+  font-size: 20px;
+  padding-bottom: .3em;
+}
 .search_result_card_explanation{
-    width: 540px;
-    height: 100%;
-    display: block;
+  width: 540px;
+  text-align: left;
+  height: 100%;
+  display: block;
 }
 .search_result_card_buttons{
   display: flex;

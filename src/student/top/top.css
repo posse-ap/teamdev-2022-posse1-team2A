@@ -47,11 +47,19 @@ main {
   top: 40%;
   right: 10%;
 }
+
 .sort_section_container {
-  display: none;
+  /* display: none; */
+  overflow: hidden;
+  opacity: 0;
   position: relative;
   text-align: center;
+  height: 0;
 }
+.sort_section_container.is-open{
+  opacity: 1;
+}
+
 .gyoukai_title ,.area_title ,.picky_title{
   background-color: lightgrey;
   border: solid 2px white;
@@ -101,7 +109,7 @@ main {
   position: relative;
 }
 
-.gyoukai_title i{
+/* .gyoukai_title i{
   color:white;
   position: absolute;
   top: 25%;
@@ -111,7 +119,7 @@ main {
 .sort_title i.rotate{
   transform:rotate(-180deg);
   top: 64%;
-}
+} */
 
 .search_button{
   background-color: #F3AE56;
@@ -152,6 +160,7 @@ input:checked + label {
 }
 
 /*----- ranking -----*/
+
 .ranking_container {
   margin: 15px;
 }
@@ -187,28 +196,26 @@ input:checked + label {
   color: #235751;
 }
 
-
-/*----- column -----*/
+/*----- column ----*/
 .column_wrapper {
   padding: 15px;
 }
+
 .column_container {
   margin-bottom: 15px;
   text-align: left;
   background-color: #fff;
 }
+
 .column_container h2{
   padding: 10px;
   background-color: #52A49A;
   color: #fff;
   font-size: 20px;
 }
+
 .column_container p {
   padding: 10px;
 }
 
 /*----- agentList page -----*/
-
-
-
-

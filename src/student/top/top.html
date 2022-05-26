@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../studentCSS/footer.css">
     <!-- font awesome -->
   <script src="https://kit.fontawesome.com/3ded641fb3.js" crossorigin="anonymous"></script>
+  <script src="/src/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
@@ -87,11 +88,11 @@
       <main>
         <article class="search_wrapper">
           <section class="sort_bar">
-            <div class="sort_title" id="sort_title_gyoukai">
-              <h2>業界から探す</h2>
+            <div class="sort_title menu js-menu" id="gyoukai">
+              <h2 >業界から探す</h2>
               <i class="fa-solid fa-sort-down fa-lg"></i>
             </div>
-            <section class="sort_section_container" id="sort_section_gyoukai_container">
+            <section class="sort_section_container_gyoukai" id="sort_section_gyoukai_container">
               <section class="gyoukai_section">
                 <div class="gyoukai_title" id="gyoukai_title">
                   <input type="checkbox" id="kensetu" name="gyoukai_label[]"> 
@@ -161,11 +162,11 @@
             </section>
           </section>
           <section class="sort_bar">
-            <div class="sort_title" id="sort_title_area">
-              <h2>求人エリアから探す</h2>
+            <div class="sort_title menu js-menu" id="sort_title_area">
+              <h2 >求人エリアから探す</h2>
               <i class="fa-solid fa-sort-down fa-lg"></i>
             </div>
-            <section class="sort_section_container" id="sort_section_area_container">
+            <section class="sort_section_container_area" id="sort_section_area_container">
               <section class="area_section">
                 <div class="area_title">
                   <input type="checkbox" id="hokkaido" name="area_label[]"> 
@@ -205,11 +206,11 @@
             </section>
           </section>
           <section class="sort_bar">
-            <div class="sort_title" id="sort_title_picky">
-              <h2>こだわり条件から探す</h2>
+            <div class="sort_title menu js-menu" id="sort_title_picky">
+              <h2 >こだわり条件から探す</h2>
               <i class="fa-solid fa-sort-down fa-lg"></i>
             </div>
-            <section class="sort_section_container" id="sort_section_picky_container">
+            <section class="sort_section_container_picky" id="sort_section_picky_container">
               <section class="picky_section">
                 <div class="picky_title">
                   <input type="checkbox" id="ec" name="picky_label[]"> 

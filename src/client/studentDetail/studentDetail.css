@@ -10,9 +10,10 @@ body{
 }
 main {
   background-color: #fff;
-  margin: 30px;
+  margin: 30px auto;
   padding: 5px;
   position: relative;
+  width: 60%;
 }
 /*======================================*/
 .detail_close {
@@ -31,6 +32,7 @@ main {
   padding: 5px;
   font-size: 24px;
   text-align: center;
+  margin: 30px auto;
 }
 
 .student_detail_table_container {

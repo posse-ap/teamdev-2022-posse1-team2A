@@ -186,8 +186,9 @@ $agentLists = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
                 <section class="ranking_container">
                     <h2 class="ranking_title">－　内定率ランキング　－</h2>
                     <section class="ranking_area">
-                        <?php foreach($rate_ranks as $rate_rank):?>
+                        <?php foreach($rate_ranks as $index => $rate_rank):?>
                         <div class="ranking_card">
+                            <div class="ranking_num_box"><p><span class="ranking_num"><?= $index + 1?></span> 位</p></div>
                             <img src="../../materials/<?= $rate_rank['image']?>">
                             <h3><?= $rate_rank['name']?></h3>
                             <p><?=$rate_rank['offer_rate']?>%</p>
@@ -205,8 +206,9 @@ $agentLists = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
                 <section class="ranking_container">
                     <h2 class="ranking_title">－　利用者数ランキング　－</h2>
                     <section class="ranking_area">
-                        <?php foreach($popu_ranks as $popu_rank):?>
+                        <?php foreach($popu_ranks as $index => $popu_rank):?>
                             <div class="ranking_card">
+                                <div class="ranking_num_box"><p><span class="ranking_num"><?= $index + 1?></span> 位</p></div>
                                 <img src="../../materials/<?= $popu_rank['image']?>">
                                 <h3><?= $popu_rank['name']?></h3>
                                 <p><?= $popu_rank['population']?>人</p>
@@ -225,8 +227,9 @@ $agentLists = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
                     <section class="ranking_container">
                         <h2 class="ranking_title">－　保有求人数　－</h2>
                         <section class="ranking_area">
-                            <?php foreach($firm_ranks as $firm_rank):?>
+                            <?php foreach($firm_ranks as $index => $firm_rank):?>
                                 <div class="ranking_card">
+                                    <div class="ranking_num_box"><p><span class="ranking_num"><?= $index + 1?></span> 位</p></div>
                                     <img src="../../materials/<?= $firm_rank['image']?>">
                                     <h3><?= $firm_rank['name']?></h3>
                                     <p><?= $firm_rank['Num_of_firm']?>社</p>

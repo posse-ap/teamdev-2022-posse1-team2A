@@ -6,9 +6,9 @@ $agent_data = "select * from agent_info;";
 $agent_offer_rate = "select * from agent_info order by offer_rate desc;";
 $agent_population = "select * from agent_info order by population desc;";
 $agent_Num_of_firm = "select * from agent_info order by Num_of_firm desc;";
-$indus_tag = "select * from tags where id between 0 and 10;";
-$areas_tag = "select * from tags where id between 11 and 16;";
-$favos_tag = "select * from tags where id between 17 and 23;";
+$indus_tag = "select * from tags where id between 0 and 11;";
+$areas_tag = "select * from tags where id between 12 and 17;";
+$favos_tag = "select * from tags where id between 18 and 24;";
 
 $agent_infos = $db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
 $rate_ranks = $db->query($agent_offer_rate)->fetchAll(PDO::FETCH_ASSOC);
@@ -187,7 +187,7 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                     </label>
                     
                     <section class="sort_section_container_area" id="sort_section_area_container">
-                        <?php foreach($area_tags as $area_tag):?>
+                        <?php foreach($area_tags as $index=>$area_tag):?>
                             <section class="area_section">
                                 <div class="area_title">
                                 <input name="tag_number[]" type="checkbox" value="<?=$index+18?>" id="area<?=$index+18?>">
@@ -207,7 +207,7 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                     </label>
                     
                     <section class="sort_section_container_picky" id="sort_section_picky_container">
-                        <?php foreach($favo_tags as $favo_tag):?>
+                        <?php foreach($favo_tags as $index=>$favo_tag):?>
                         <section class="picky_section">
                             <div class="picky_title">
                                 <input name="tag_number[]" type="checkbox" value="<?=$index+1?>" id="picky<?=$index+1?>">

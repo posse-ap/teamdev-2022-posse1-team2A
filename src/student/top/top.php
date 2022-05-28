@@ -154,60 +154,71 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                 <a href="#!" class="modal_close">×</a>
             </div>
         </div>
+        <!-- modal ここまで-->
     </header>
     <main>
         <form action="../searchResult/searchResult.php" method="post" class="search_wrapper">
             <section class="sort_bar">
                 <div class="sort_title" id="sort_title_gyoukai">
-                    <h2>業界から探す</h2>
+                    <input type="checkbox" id="gyoukai_ipt" class="sort_ipt" style="display: none;">
+                    <label for="gyoukai_ipt" class="ipt_label">
+                        <div>業界から探す</div>
+                    </label>
+                    <section class="sort_section_container_gyoukai" id="sort_section_gyoukai_container">
+                        <?php foreach($industry_tags as $index=>$industry_tag):?>
+                        <section class="gyoukai_section">
+                            <div class="gyoukai_title">
+                                <input name="tag_number[]" type="checkbox" value="<?=$index+12?>" id="gyoukai<?=$index+12?>">
+                                <label for="gyoukai<?=$index+12?>"><?=$industry_tag['tag'];?></label>
+                            </div>
+                        </section>
+                        <?php endforeach;?>
+                        
+                        
+                    </section>
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
-
-                <section class="sort_option_container" id="sort_option_gyoukai_container">
-                    <?php foreach($industry_tags as $index=>$industry_tag):?>
-                    <section class="gyoukai_section">
-                        <div class="gyoukai_title">
-                            <input name="tag_number[]" type="checkbox" value="<?=$index+12?>">
-                            <p><?=$industry_tag['tag'];?></p>
-                        </div>
-                    </section>
-                    <?php endforeach;?>
-                    
-                    
-                </section>
             </section>
             <section class="sort_bar">
                 <div class="sort_title" id="sort_title_area">
-                    <h2>求人エリアから探す</h2>
+                    <input type="checkbox" id="area_ipt" class="sort_ipt" style="display: none;">
+                    <label for="area_ipt" class="ipt_label">
+                        <div>求人エリアから探す</div>
+                    </label>
+                    
+                    <section class="sort_section_container_area" id="sort_section_area_container">
+                        <?php foreach($area_tags as $area_tag):?>
+                            <section class="area_section">
+                                <div class="area_title">
+                                <input name="tag_number[]" type="checkbox" value="<?=$index+18?>" id="area<?=$index+18?>">
+                                <label for="area<?=$index+18?>"><?=$area_tag['tag'];?></label>
+                            </div>
+                        </section>
+                        <?php endforeach;?>
+                    </section>
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
-                <section class="sort_option_container" id="sort_option_area_container">
-                    <?php foreach($area_tags as $area_tag):?>
-                        <section class="area_section">
-                            <div class="area_title">
-                            <input name="tag_number[]" type="checkbox" value="<?=$index+18?>">
-                            <p><?=$area_tag['tag'];?></p>
-                        </div>
-                    </section>
-                    <?php endforeach;?>
-                </section>
             </section>
             <section class="sort_bar">
                 <div class="sort_title" id="sort_title_picky">
-                    <h2>こだわり条件から探す</h2>
+                    <input type="checkbox" id="picky_ipt" class="sort_ipt" style="display: none;">
+                    <label for="picky_ipt" class="ipt_label">
+                        <div>こだわり条件から探す</div>
+                    </label>
+                    
+                    <section class="sort_section_container_picky" id="sort_section_picky_container">
+                        <?php foreach($favo_tags as $favo_tag):?>
+                        <section class="picky_section">
+                            <div class="picky_title">
+                                <input name="tag_number[]" type="checkbox" value="<?=$index+1?>" id="picky<?=$index+1?>">
+                                <label for="picky<?=$index+1?>"><?=$favo_tag['tag'];?></label>
+                            </div>
+                        </section>
+                        <?php endforeach;?>
+                        
+                    </section>
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
-                <section class="sort_option_container" id="sort_option_picky_container">
-                    <?php foreach($favo_tags as $favo_tag):?>
-                    <section class="picky_section">
-                        <div class="picky_title">
-                            <input name="tag_number[]" type="checkbox" value="<?=$index+1?>">
-                            <p><?=$favo_tag['tag'];?></p>
-                        </div>
-                    </section>
-                    <?php endforeach;?>
-                    
-                </section>
             </section>
             <button type="submit" class="search_button">
                 <p>検索する</p>

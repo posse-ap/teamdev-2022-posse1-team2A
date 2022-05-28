@@ -31,46 +31,6 @@ if ($name != '' && $intro != '' && $image != '') {
 }
 $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
 
-try {
-    if(isset($_POST['tag_number'])){
-        // $tagg = $_POST['tag_number'];
-        // $chose_tag = explode(',', $tagg);
-        // $sort_key="select * from agent_info inner join info_tags on agent_info.name=info_tags.name";
-        // $sql = 'SELECT * FROM agent_info ';
-        // $sql .= 'where info_tags.tag_id IN (' . substr(str_repeat(',?', count($chose_tag)), 1) . ')';
-        // $stmt = $db->prepare($sql);
-        // $stmt->execute($chose_tag);
-        // var_dump($stmt->fetchAll(PDO::FETCH_ASSOC));
-
-        // IN 句に入る値を作成
-        $select_id=$_POST['tag_number'];
-        $inClause = substr(str_repeat(',?', count($select_id)), 1); // '?,?,?'
-        // $sql = "SELECT * FROM  WHERE id IN ({$inClause})";
-        $sql = "SELECT name,image FROM agent_info inner join info_tags on agent_info.name=info_tags.agent_name where info_tags.tag_id IN ({$inClause})";
-        $stmt = $db->prepare($sql);
-        // プレースホルダが ? の時 execute() に配列で渡すことが出来る。
-        $stmt->execute($select_id);
-        $res = $stmt->fetchAll(); 
-        $_SESSION['tags']=[
-            $res
-        ];
-
-
-        
-        
-        // print_r($select_id);
-        // print_r($inClause);
-        // print_r($res);
-        // print_r(count($select_id));
-        // print_r($_POST['tag_number']);/
-        print_r($res);
-        // print_r($_SESSION['tags']);
-    }
-    
-    
-} catch (Exception $e) {
-    print "error!! " . $e->getMessage() . PHP_EOL;
-}
 
 
 // if(isset($agentLists)){
@@ -193,7 +153,7 @@ try {
         <!-- modal ここまで -->
     </header>
     <main>
-        <form action="top.php" method="post" class="search_wrapper">
+        <form action="../searchResult/searchResult.php" method="post" class="search_wrapper">
             <section class="sort_bar">
                 <div class="sort_title" id="sort_title_gyoukai">
                     <h2>業界から探す</h2>
@@ -204,7 +164,7 @@ try {
                     <?php foreach($tags as $index=>$tag):?>
                     <section class="gyoukai_section">
                         <div class="gyoukai_title">
-                            <input name="tag_number" type="checkbox" value="<?=$index+1?>">
+                            <input name="tag_number[]" type="checkbox" value="<?=$index+1?>">
                             <p><?=$tag['tag'];?></p>
                         </div>
                     </section>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require(dirname(__FILE__) . "/dbconnect.php");
+require "./dbconnect.php";
 
 $stmt = $db->query('SELECT id, title FROM events');
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);

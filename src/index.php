@@ -28,6 +28,7 @@ print_r($events);
     <a href="./client/studentDetail/studentDetail.php">学生詳細</a>
     <a href="./student/agentDetail/agentDetail.php">エージェント詳細</a>
     <a href="./student/searchResult/searchResult.php">検索結果</a>
+    <a href="./client/studentList/studentList.php">学生リスト</a>
 
 </ul>
 

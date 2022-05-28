@@ -31,94 +31,81 @@ main {
   margin: 20px auto 10px auto;
   padding: 10px;
 }
-.sort_title {
+
+.ipt_label div{
   background-color: #E3FFFC;
   border: solid 1px #235751;
-  /* border-radius: 12px; */
   color: #235751;
-  /* display: flex; */
   text-align: center;
-  position: relative;
-  padding: 10px;
+  padding: .5em;
+  font-size: 18px;
 }
 
 /* 今backgroundcolorが全体についてる（濃い緑）て、細かい選択肢のボックスの周りの色も同じになってるから分けなきゃいけない */
 
-
-.sort_title h2{
-  font-size: 18px;
+.sort_section_container_gyoukai,
+.sort_section_container_area,
+.sort_section_container_picky {
+  padding-top: 10px;
+  height: 0;
+  opacity: 0;
+  transition: .5s;
+  visibility: hidden;
+  background-color: #fff;
+}
+/*----- title 押された時 ↓-----*/
+.sort_ipt:checked + .ipt_label + .sort_section_container_gyoukai{
+  height: 570px;
+  opacity: 1;
+  visibility: visible;
+}
+.sort_ipt:checked + .ipt_label + .sort_section_container_area{
+  height: 300px;
+  opacity: 1;
+  visibility: visible;
+}
+.sort_ipt:checked + .ipt_label + .sort_section_container_picky{
+  height: 400px;
+  opacity: 1;
+  visibility: visible;
+}
+/*----- title 押された時 ↑-----*/
+.sort_title {
+  position: relative;
 }
 .sort_title i{
   color: #52A49A;
   position: absolute;
-  top: 40%;
+  top: 10px;
   right: 10%;
+  /* transform: translate(0 0); */
 }
-.sort_section_container {
-  display: none;
-  position: relative;
-  text-align: center;
+.sort_ipt:checked ~ .fa-sort-down{
+  transform: rotate(-180deg);
+  top: 20px;
 }
+
 .gyoukai_title ,.area_title ,.picky_title{
   background-color: lightgrey;
   border: solid 2px white;
   border-radius: 20px;
   color: white;
   margin:10px;
+  margin-top: 0;
   padding: 8px;
   text-align: center;
   position: relative;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
 }
-
-/* .gyoukai_title{
-	padding-left:24px;
-	position:relative;
-} */
-
-/* .gyoukai_title:before,
-.gyoukai_title:after{
-	content:"";
-	display:block;
-	position:absolute;
-}
-.gyoukai_title:before{
-	width:28px;
-	height:28px;
-	border-radius:14px;
-	background:#ffffff;
-	border:1px solid #000000;
-	left:4;top:2px;
-}
-.gyoukai_title:after{
-	border-left:4px solid #52A49A;
-	border-bottom:4px solid #52A49A;
-	width:16px;
-	height:12px;
-	-webkit-transform:rotate(-45deg);
-	transform:rotate(-45deg);
-	left:16px;
-	top:8px;
-} */
-
-/* .display_none{
-  display: none;
-} */
 
 .gyoukai_title{
   position: relative;
 }
 
-.gyoukai_title i{
-  color:white;
-  position: absolute;
-  top: 25%;
-  right: 10%;
-}
-
 .sort_title i.rotate{
-  transform:rotate(-180deg);
+  transform:rotate(180deg);
   top: 64%;
-}
+} 
 
 .search_button{
   background-color: #F3AE56;
@@ -154,11 +141,12 @@ main {
   right: 10%;
 }
 
-input:checked + label {
-  background-color:#52A49A;
-}
+/* input:checked + label {
+  background-color:#52A49A;         各選択肢の色変更のやつ。後で戻す
+} */
 
 /*----- ranking -----*/
+
 .ranking_container {
   margin: 15px;
 }
@@ -208,16 +196,17 @@ input:checked + label {
   color: #235751;
 }
 
-
-/*----- column -----*/
+/*----- column ----*/
 .column_wrapper {
   padding: 15px;
 }
+
 .column_container {
   margin-bottom: 15px;
   text-align: left;
   background-color: #fff;
 }
+
 .col_ipt {
   display: none;
 }
@@ -253,7 +242,3 @@ input:checked + label {
 }
 
 /*----- agentList page -----*/
-
-
-
-

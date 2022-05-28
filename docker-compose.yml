@@ -69,6 +69,7 @@ services:
     build: # Dockerfileで設定する
       context: .
       dockerfile: ./docker/mysql/Dockerfile
+    platform: 'linux/amd64'
     ports: # ポートの設定(後で.envでする)
       - ${DB_PORT}:3306
     environment: # ユーザとかパスワードとかの設定(後で.envでする)

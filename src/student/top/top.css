@@ -169,6 +169,7 @@ input:checked + label {
 .ranking_area{
   display: flex;
   overflow-x: scroll;
+  padding-top: 40px;
 }
 .ranking_card {
   width: 130px;
@@ -176,6 +177,19 @@ input:checked + label {
   margin: 10px 10px;
   background-color: #fff;
   flex-shrink: 0;
+  position: relative;
+}
+.ranking_num {
+  font-size: 22px;
+  }
+.ranking_num_box {
+  position: absolute;
+  transform: translateY(-100%);
+  background-color: #F3AE56;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+  padding: .2em .5em;
+  width: 50%;
 }
 .ranking_card img{
   width: 130px;

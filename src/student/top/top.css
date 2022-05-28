@@ -9,6 +9,12 @@ body {
 main {
   padding-top: 50px;
   text-align: center;
+  margin: auto;
+}
+@media screen and (min-width: 480px){
+  main {
+    width: 70%;
+  }
 }
 .white {
   color: white;
@@ -198,7 +204,10 @@ input:checked + label {
   text-align: left;
   background-color: #fff;
 }
-.column_container h2{
+.col_ipt {
+  display: none;
+}
+.column_container h2 {
   padding: .5em;
   padding-left: 1em;
   background-color: #52A49A;
@@ -206,7 +215,7 @@ input:checked + label {
   font-size: 20px;
   position: relative;
 }
-.column_container h2::before{
+.column_container h2::before {
   content: '';
   width: .3em;
   height: 1.1em;
@@ -214,8 +223,19 @@ input:checked + label {
   position: absolute;
   left: .5em;
 }
-.column_container p {
+.col_content {
+  padding: .5em;
+  height: 0;
+  opacity: 0;
+  padding: 0 10px;
+  transition: .3s;
+  visibility: hidden;
+}
+.col_ipt:checked + .col_lable + .col_content{
+  height: 100px;     /*auto以外で高さ指定*/
+  opacity: 1;
   padding: 10px;
+  visibility: visible;
 }
 
 /*----- agentList page -----*/

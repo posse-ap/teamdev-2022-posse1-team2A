@@ -218,17 +218,22 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                 <h2 class="ranking_title">－　内定率ランキング　－</h2>
                 <section class="ranking_area">
                     <?php foreach ($rate_ranks as $rate_rank) : ?>
-                        <div class="ranking_card">
-                            <img src="../../materials/<?= $rate_rank['image'] ?>">
-                            <h3><?= $rate_rank['name'] ?></h3>
-                            <p><?= $rate_rank['offer_rate'] ?>%</p>
-                            <form action="top.php" method="POST">
-                                <input type="hidden" name="name" value="<?= $rate_rank['name'] ?>">
-                                <input type="hidden" name="intro" value="<?= $rate_rank['text'] ?>">
-                                <input type="hidden" name="image" value="<?= $rate_rank['image'] ?>">
-                                <button type="submit">リストに入れる</button>
-                            </form>
-                        </div>
+                        <form action="">
+                            <button type="submit">
+                                <div class="ranking_card">
+                                    <img src="../../materials/<?= $rate_rank['image'] ?>">
+                                    <h3><?= $rate_rank['name'] ?></h3>
+                                    <p><?= $rate_rank['offer_rate'] ?>%</p>
+                                    <form action="top.php" method="POST">
+                                        <input type="hidden" name="name" value="<?= $rate_rank['name'] ?>">
+                                        <input type="hidden" name="intro" value="<?= $rate_rank['text'] ?>">
+                                        <input type="hidden" name="image" value="<?= $rate_rank['image'] ?>">
+                                        <button type="submit">リストに入れる</button>
+                                    </form>
+                                </div>
+
+                            </button>
+                        </form>
                     <?php endforeach; ?>
 
                 </section>

@@ -169,7 +169,10 @@ CREATE TABLE student_list (
   PRIMARY KEY(id)
 );
 INSERT INTO student_list (last_name,first_name,student_email,student_phone,college,faculty,department,graduation_year,student_address) values 
-("藤間","裕史","ugkirin@gmail.com","080-4432-3456","慶應義塾大学","商","商","24","アメリカ合衆国");
+("藤間","裕史","ugkirin@gmail.com","080-4432-3456","スタンフォード大学","CS","CS","24","シリコンバレー"),
+("井戸","宗達","sohtatsu@gmail.com","090-3422-3996","ハーバード大学","経済","経済","24","ボストン"),
+("尾関","なな海","nanami@gmail.com","080-1312-1246","東京大学","商","商","24","東京"),
+("西山","直樹","naoki@gmail.com","030-4552-3456","N予備校","tiktok","tiktok","24","島根");
 
 -- 申し込み数計測テーブル
 

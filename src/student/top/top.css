@@ -21,7 +21,8 @@ main {
 /*----- search -----*/
 .search_wrapper {
   background-color: #52A49A;
-  margin: 20px 80px 10px 80px;
+  width: 90%;
+  margin: 20px auto 10px auto;
   padding: 10px;
 }
 .sort_title {

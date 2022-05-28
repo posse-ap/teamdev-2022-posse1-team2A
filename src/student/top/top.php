@@ -6,13 +6,17 @@ $agent_data = "select * from agent_info;";
 $agent_offer_rate = "select * from agent_info order by offer_rate desc;";
 $agent_population = "select * from agent_info order by population desc;";
 $agent_Num_of_firm = "select * from agent_info order by Num_of_firm desc;";
-$sort_tag = "select * from tags;";
+$indus_tag = "select * from tags where id between 0 and 10;";
+$areas_tag = "select * from tags where id between 11 and 16;";
+$favos_tag = "select * from tags where id between 17 and 23;";
 
 $agent_infos = $db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
 $rate_ranks = $db->query($agent_offer_rate)->fetchAll(PDO::FETCH_ASSOC);
 $popu_ranks = $db->query($agent_population)->fetchAll(PDO::FETCH_ASSOC);
 $firm_ranks = $db->query($agent_Num_of_firm)->fetchAll(PDO::FETCH_ASSOC);
-$tags = $db->query($sort_tag)->fetchAll(PDO::FETCH_ASSOC);
+$industry_tags = $db->query($indus_tag)->fetchAll(PDO::FETCH_ASSOC);
+$area_tags = $db->query($areas_tag)->fetchAll(PDO::FETCH_ASSOC);
+$favo_tags = $db->query($favos_tag)->fetchAll(PDO::FETCH_ASSOC);
 
 $name = isset($_POST['name']) ? htmlspecialchars($_POST['name'], ENT_QUOTES, 'utf-8') : '';
 $intro = isset($_POST['intro']) ? htmlspecialchars($_POST['intro'], ENT_QUOTES, 'utf-8') : '';
@@ -150,7 +154,6 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                 <a href="#!" class="modal_close">×</a>
             </div>
         </div>
-        <!-- modal ここまで -->
     </header>
     <main>
         <form action="../searchResult/searchResult.php" method="post" class="search_wrapper">
@@ -161,11 +164,11 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                 </div>
 
                 <section class="sort_option_container" id="sort_option_gyoukai_container">
-                    <?php foreach($tags as $index=>$tag):?>
+                    <?php foreach($industry_tags as $index=>$industry_tag):?>
                     <section class="gyoukai_section">
                         <div class="gyoukai_title">
-                            <input name="tag_number[]" type="checkbox" value="<?=$index+1?>">
-                            <p><?=$tag['tag'];?></p>
+                            <input name="tag_number[]" type="checkbox" value="<?=$index+12?>">
+                            <p><?=$industry_tag['tag'];?></p>
                         </div>
                     </section>
                     <?php endforeach;?>
@@ -178,15 +181,12 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                     <h2>求人エリアから探す</h2>
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
-                <?php
-                $areas=["北海道・東北","中部","関東","近畿","中国・四国","九州・沖縄"];
-                ?>
                 <section class="sort_option_container" id="sort_option_area_container">
-                    <?php foreach($areas as $area):?>
+                    <?php foreach($area_tags as $area_tag):?>
                         <section class="area_section">
                             <div class="area_title">
-                                <input type="checkbox">
-                            <p><?=$area?></p>
+                            <input name="tag_number[]" type="checkbox" value="<?=$index+18?>">
+                            <p><?=$area_tag['tag'];?></p>
                         </div>
                     </section>
                     <?php endforeach;?>
@@ -197,15 +197,12 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                     <h2>こだわり条件から探す</h2>
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
-                <?php
-                $favos=["面接対策","LINE相談","オンライン面談","女性に人気","海外で働きたい","経験値の高い担当者が多い","大手企業で働きたい"];
-                ?>
                 <section class="sort_option_container" id="sort_option_picky_container">
-                    <?php foreach($favos as $favo):?>
+                    <?php foreach($favo_tags as $favo_tag):?>
                     <section class="picky_section">
                         <div class="picky_title">
-                            <input type="checkbox">
-                            <p><?=$favo?></p>
+                            <input name="tag_number[]" type="checkbox" value="<?=$index+1?>">
+                            <p><?=$favo_tag['tag'];?></p>
                         </div>
                     </section>
                     <?php endforeach;?>

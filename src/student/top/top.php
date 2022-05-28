@@ -144,7 +144,7 @@ $agentLists = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
         </div>
         <a href="#!" class="modal_close">×</a>
     </div>
-</div>
+    </div>
         <!-- modal ここまで -->
         </header>
         <main>
@@ -238,7 +238,7 @@ $agentLists = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
                                     </form>
                                 </div>
                                 <?php endforeach;?>
-                                
+
                     </section>
                 </section>
                     <div class="agent_link">

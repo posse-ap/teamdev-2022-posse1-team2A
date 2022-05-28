@@ -16,28 +16,21 @@
 //   }; 
 
   const menu = document.querySelectorAll(".js-menu");
+  let type = getElementByClassName("")
 
   function toggle(event) {
     console.log(event);
-    // const content = document.querySelector(`sort_section_container_${}`);
-    // this.classList.toggle("is-active");
-    // content.classList.toggle("is-open");
+    const content = document.querySelector(`sort_section_container_${type}`);
+    this.classList.toggle("is-active");
+    content.classList.toggle("is-open");
   }
-  
+
   for (let i = 0; i < menu.length; i++) {
-    menu[i].addEventListener("click", toggle);
+    menu[i].addEventListener("click", function() {
+      toggle(menu[i])
+    })
   }
 
-//   もう一回押したら閉じるようにする
-
-// let a= document.getElementsByClassName("gyoukai_title");
-
-// document.getElementByClassName("gyoukai_section").onclick = function() {
-//     a.classList.remove("display_none");
-//   }; 
-
-// let item= document.getElementById("gyoukai_title");
-
-// document.getElementById('sort_option_gyoukai_container').onclick = function() {
-//   item.style.backgroundColor = "#3fb811";
-// };
+  function toggle(target) {
+    console.log(target);
+  }

@@ -10,7 +10,6 @@ $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -97,7 +96,6 @@ $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
         <!-- modal ここまで -->
     </header>
     <main>
-        <!-- <?php foreach($agent_infos as $agent_info):?> -->
         <article class="detail_wrapper">
             <section class="detail_top">
                 <div class="detail_agent_name">リクナビ</div>
@@ -156,5 +154,4 @@ $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
     </footer>
     <script src=""></script>
 </body>
-
 </html>

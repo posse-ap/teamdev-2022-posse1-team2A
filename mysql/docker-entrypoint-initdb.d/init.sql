@@ -41,6 +41,8 @@ DROP TABLE IF EXISTS agent_info;
 CREATE TABLE agent_info
 (
   id INT AUTO_INCREMENT,
+  industry VARCHAR(200),
+  area VARCHAR(200),
   es_advise INT,
   interview_support INT,
   seminer INT,
@@ -66,14 +68,29 @@ CREATE TABLE agent_info
   PRIMARY KEY(id)
 );
 
-INSERT INTO agent_info (es_advise,interview_support,seminer,line_consult,online_consult,offer_rate,population,Num_of_firm,women_customer,foreign_company,listed_company,contract_date,name,url,address,representative,phone_number,email,image,text,responsible_division,cv_email) VALUES 
-(1,0,1,1,0,30,30000,900,30,110,20,"20220713","リクナビ","https://job.rikunabi.com/2023/","東京","藤井裕史","849-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com"),
-(1,0,1,1,0,40,60000,100,20,60,40,"20220614","マイナビ","https://job.mynavi.jp/2023/","京都","藤田裕史","523-4783-2489","ugg@gmail.com","maynavi.png","yeahwow","execution","ugki@gmail.com"),
-(1,0,1,1,0,50,10000,800,50,50,80,"20220915","キャリアチケット","https://careerticket.jp/","大阪","藤岡裕史","623-4783-2489","ugg@gmail.com","careerticket.png","yeahwow","execution","ugki@gmail.com"),
-(1,0,1,1,0,60,90000,200,90,80,10,"20220416","レバテックルーキー","https://rookie.levtech.jp/","福岡","藤ヶ崎裕史","624-4783-2489","ugg@gmail.com","levetech.jpg","yeahwow","execution","ugki@gmail.com"),
-(1,0,1,1,0,70,70000,700,10,90,40,"20220515","type","https://typeshukatsu.jp/","栃木","藤裕史","256-4783-2489","ugg@gmail.com","img_type.png","yeahwow","execution","ugki@gmail.com"),
-(1,0,1,1,0,80,20000,300,130,30,60,"20220814","ugg-inc","https://www.sonymusic.co.jp/artist/MichaelJackson/","California","藤間裕史","278-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com"),
-(1,0,1,1,0,90,50000,600,40,10,50,"20220317","ujs-inc","https://marvel.disney.co.jp/","Rome","藤間裕行","836-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com");
+INSERT INTO agent_info (industry,area,es_advise,interview_support,seminer,line_consult,online_consult,offer_rate,population,Num_of_firm,women_customer,foreign_company,listed_company,contract_date,name,url,address,representative,phone_number,email,image,text,responsible_division,cv_email) VALUES 
+("商社","関東",1,0,1,1,0,30,30000,900,30,110,20,"20220713","リクナビ","https://job.rikunabi.com/2023/","東京","藤井裕史","849-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com"),
+("機械","関東",1,0,1,1,0,30,30000,900,30,110,20,"20220713","リクナビ","https://job.rikunabi.com/2023/","東京","藤井裕史","849-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com"),
+("建設・住宅・不動産","関東",1,0,1,1,0,40,60000,100,20,60,40,"20220614","マイナビ","https://job.mynavi.jp/2023/","京都","藤田裕史","523-4783-2489","ugg@gmail.com","maynavi.png","yeahwow","execution","ugki@gmail.com"),
+("医療・福祉","中部",1,0,1,1,0,40,60000,100,20,60,40,"20220614","マイナビ","https://job.mynavi.jp/2023/","京都","藤田裕史","523-4783-2489","ugg@gmail.com","maynavi.png","yeahwow","execution","ugki@gmail.com"),
+("調査・コンサルタント","北海道・東北",1,0,1,1,0,40,60000,100,20,60,40,"20220614","マイナビ","https://job.mynavi.jp/2023/","京都","藤田裕史","523-4783-2489","ugg@gmail.com","maynavi.png","yeahwow","execution","ugki@gmail.com"),
+("水産・食品","九州・沖縄",1,0,1,1,0,50,10000,800,50,50,80,"20220915","キャリアチケット","https://careerticket.jp/","大阪","藤岡裕史","623-4783-2489","ugg@gmail.com","careerticket.png","yeahwow","execution","ugki@gmail.com"),
+("機械","中部",1,0,1,1,0,50,10000,800,50,50,80,"20220915","キャリアチケット","https://careerticket.jp/","大阪","藤岡裕史","623-4783-2489","ugg@gmail.com","careerticket.png","yeahwow","execution","ugki@gmail.com"),
+("旅行・観光","近畿",1,0,1,1,0,50,10000,800,50,50,80,"20220915","キャリアチケット","https://careerticket.jp/","大阪","藤岡裕史","623-4783-2489","ugg@gmail.com","careerticket.png","yeahwow","execution","ugki@gmail.com"),
+("情報処理・ソフトウェア・ゲームソフト","関東",1,0,1,1,0,60,90000,200,90,80,10,"20220416","レバテックルーキー","https://rookie.levtech.jp/","福岡","藤ヶ崎裕史","624-4783-2489","ugg@gmail.com","levetech.jpg","yeahwow","execution","ugki@gmail.com"),
+("機械","中部",1,0,1,1,0,60,90000,200,90,80,10,"20220416","レバテックルーキー","https://rookie.levtech.jp/","福岡","藤ヶ崎裕史","624-4783-2489","ugg@gmail.com","levetech.jpg","yeahwow","execution","ugki@gmail.com"),
+("広告・出版・マスコミ","中部",1,0,1,1,0,60,90000,200,90,80,10,"20220416","レバテックルーキー","https://rookie.levtech.jp/","福岡","藤ヶ崎裕史","624-4783-2489","ugg@gmail.com","levetech.jpg","yeahwow","execution","ugki@gmail.com"),
+("金融・銀行","近畿",1,0,1,1,0,70,70000,700,10,90,40,"20220515","type","https://typeshukatsu.jp/","栃木","藤裕史","256-4783-2489","ugg@gmail.com","img_type.png","yeahwow","execution","ugki@gmail.com"),
+("旅行・観光","関東",1,0,1,1,0,70,70000,700,10,90,40,"20220515","type","https://typeshukatsu.jp/","栃木","藤裕史","256-4783-2489","ugg@gmail.com","img_type.png","yeahwow","execution","ugki@gmail.com"),
+("官公庁・団体","関東",1,0,1,1,0,70,70000,700,10,90,40,"20220515","type","https://typeshukatsu.jp/","栃木","藤裕史","256-4783-2489","ugg@gmail.com","img_type.png","yeahwow","execution","ugki@gmail.com"),
+("医療・福祉","中部",1,0,1,1,0,70,70000,700,10,90,40,"20220515","type","https://typeshukatsu.jp/","栃木","藤裕史","256-4783-2489","ugg@gmail.com","img_type.png","yeahwow","execution","ugki@gmail.com"),
+("建設・住宅・不動産","関東",1,0,1,1,0,80,20000,300,130,30,60,"20220814","ugg-inc","https://www.sonymusic.co.jp/artist/MichaelJackson/","California","藤間裕史","278-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com"),
+("旅行・観光","関東",1,0,1,1,0,80,20000,300,130,30,60,"20220814","ugg-inc","https://www.sonymusic.co.jp/artist/MichaelJackson/","California","藤間裕史","278-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com"),
+("旅行・観光","中部",1,0,1,1,0,80,20000,300,130,30,60,"20220814","ugg-inc","https://www.sonymusic.co.jp/artist/MichaelJackson/","California","藤間裕史","278-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com"),
+("建設・住宅・不動産","関東",1,0,1,1,0,90,50000,600,40,10,50,"20220317","ujs-inc","https://marvel.disney.co.jp/","Rome","藤間裕行","836-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com"),
+("金融・銀行","北海道・東北",1,0,1,1,0,90,50000,600,40,10,50,"20220317","ujs-inc","https://marvel.disney.co.jp/","Rome","藤間裕行","836-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com"),
+("広告・出版・マスコミ","近畿",1,0,1,1,0,90,50000,600,40,10,50,"20220317","ujs-inc","https://marvel.disney.co.jp/","Rome","藤間裕行","836-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com"),
+("情報処理・ソフトウェア・ゲームソフト","関東",1,0,1,1,0,90,50000,600,40,10,50,"20220317","ujs-inc","https://marvel.disney.co.jp/","Rome","藤間裕行","836-4783-2489","ugg@gmail.com","rikunavi.png","yeahwow","execution","ugki@gmail.com");
 
 
 -- エージェント契約情報テーブル
@@ -149,5 +166,73 @@ INSERT INTO agent_count (apply_time,agent_name) values
 ("20010915","キャリアチケット"),
 ("20010915","type"),
 ("20010915","type");
+
+DROP TABLE IF EXISTS student_list;
+
+CREATE TABLE student_list (
+  id INT AUTO_INCREMENT,
+  apply_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+  last_name VARCHAR(200),
+  first_name VARCHAR(200),
+  student_email VARCHAR(200),
+  student_phone VARCHAR(200),
+  college VARCHAR(200),
+  faculty VARCHAR(200),
+  department VARCHAR(200),
+  graduation_year VARCHAR(200),
+  student_address VARCHAR(200),
+  PRIMARY KEY(id)
+);
+INSERT INTO student_list (last_name,first_name,student_email,student_phone,college,faculty,department,graduation_year,student_address) values 
+("藤間","裕史","ugkirin@gmail.com","080-4432-3456","慶應義塾大学","商","商","24","アメリカ合衆国");
+
+-- 申し込み数計測テーブル
+
+DROP TABLE IF EXISTS tags;
+
+CREATE TABLE tags (
+  id INT AUTO_INCREMENT,
+  tag VARCHAR(200),
+  PRIMARY KEY(id)
+);
+INSERT INTO tags (tag) values 
+("建設・住宅・不動産"),
+("広告・出版・マスコミ"),
+("金融・銀行"),
+("医療・福祉"),
+("旅行・観光"),
+("機械"),
+("情報処理・ソフトウェア・ゲームソフト"),
+("水産・食品"),
+("商社"),
+("調査・コンサルタント"),
+("官公庁・団体");
+
+
+
+DROP TABLE IF EXISTS info_tags;
+
+CREATE TABLE info_tags (
+  id INT AUTO_INCREMENT,
+  tag_id INT(99),
+  agent_name VARCHAR(200),
+  PRIMARY KEY(id)
+);
+INSERT INTO info_tags (tag_id,agent_name) values 
+(1,"リクナビ"),
+(2,"マイナビ"),
+(3,"レバテックルーキー"),
+(4,"キャリアチケット"),
+(5,"type"),
+(6,"リクナビ"),
+(7,"マイナビ"),
+(8,"レバテックルーキー"),
+(9,"キャリアチケット"),
+(10,"type"),
+(11,"リクナビ");
+
+
+
+
 
 

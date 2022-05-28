@@ -199,10 +199,20 @@ input:checked + label {
   background-color: #fff;
 }
 .column_container h2{
-  padding: 10px;
+  padding: .5em;
+  padding-left: 1em;
   background-color: #52A49A;
   color: #fff;
   font-size: 20px;
+  position: relative;
+}
+.column_container h2::before{
+  content: '';
+  width: .3em;
+  height: 1.1em;
+  background-color: #F3AE56;
+  position: absolute;
+  left: .5em;
 }
 .column_container p {
   padding: 10px;

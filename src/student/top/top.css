@@ -9,6 +9,12 @@ body {
 main {
   padding-top: 50px;
   text-align: center;
+  margin: auto;
+}
+@media screen and (min-width: 480px){
+  main {
+    width: 70%;
+  }
 }
 .white {
   color: white;
@@ -21,7 +27,8 @@ main {
 /*----- search -----*/
 .search_wrapper {
   background-color: #52A49A;
-  margin: 20px 80px 10px 80px;
+  width: 90%;
+  margin: 20px auto 10px auto;
   padding: 10px;
 }
 .sort_title {
@@ -207,15 +214,38 @@ input:checked + label {
   background-color: #fff;
 }
 
-.column_container h2{
-  padding: 10px;
+.col_ipt {
+  display: none;
+}
+.column_container h2 {
+  padding: .5em;
+  padding-left: 1em;
   background-color: #52A49A;
   color: #fff;
   font-size: 20px;
+  position: relative;
 }
-
-.column_container p {
+.column_container h2::before {
+  content: '';
+  width: .3em;
+  height: 1.1em;
+  background-color: #F3AE56;
+  position: absolute;
+  left: .5em;
+}
+.col_content {
+  padding: .5em;
+  height: 0;
+  opacity: 0;
+  padding: 0 10px;
+  transition: .3s;
+  visibility: hidden;
+}
+.col_ipt:checked + .col_lable + .col_content{
+  height: 100px;     /*auto以外で高さ指定*/
+  opacity: 1;
   padding: 10px;
+  visibility: visible;
 }
 
 /*----- agentList page -----*/

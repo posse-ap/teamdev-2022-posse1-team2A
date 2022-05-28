@@ -228,23 +228,20 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
             <section class="ranking_container">
                 <h2 class="ranking_title">－　内定率ランキング　－</h2>
                 <section class="ranking_area">
-                    <?php foreach ($rate_ranks as $rate_rank) : ?>
-                        <form action="">
-                            <button type="submit">
-                                <div class="ranking_card">
-                                    <img src="../../materials/<?= $rate_rank['image'] ?>">
-                                    <h3><?= $rate_rank['name'] ?></h3>
-                                    <p><?= $rate_rank['offer_rate'] ?>%</p>
-                                    <form action="top.php" method="POST">
-                                        <input type="hidden" name="name" value="<?= $rate_rank['name'] ?>">
-                                        <input type="hidden" name="intro" value="<?= $rate_rank['text'] ?>">
-                                        <input type="hidden" name="image" value="<?= $rate_rank['image'] ?>">
-                                        <button type="submit">リストに入れる</button>
-                                    </form>
-                                </div>
+                    <?php foreach ($rate_ranks as $index => $rate_rank) : ?>
+                        <div class="ranking_card">
+                            <div class="ranking_num_box"><p><span class="ranking_num"><?= $index+1 ?></span> 位</p></div>
+                            <img src="../../materials/<?= $rate_rank['image'] ?>">
+                            <h3><?= $rate_rank['name'] ?></h3>
+                            <p><?= $rate_rank['offer_rate'] ?>%</p>
+                            <form action="top.php" method="POST">
+                                <input type="hidden" name="name" value="<?= $rate_rank['name'] ?>">
+                                <input type="hidden" name="intro" value="<?= $rate_rank['text'] ?>">
+                                <input type="hidden" name="image" value="<?= $rate_rank['image'] ?>">
+                                <button type="submit">リストに入れる</button>
+                            </form>
+                        </div>
 
-                            </button>
-                        </form>
                     <?php endforeach; ?>
 
                 </section>
@@ -252,8 +249,9 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
             <section class="ranking_container">
                 <h2 class="ranking_title">－　利用者数ランキング　－</h2>
                 <section class="ranking_area">
-                    <?php foreach ($popu_ranks as $popu_rank) : ?>
+                    <?php foreach ($popu_ranks as $index => $popu_rank) : ?>
                         <div class="ranking_card">
+                            <div class="ranking_num_box"><p><span class="ranking_num"><?= $index+1 ?></span> 位</p></div>
                             <img src="../../materials/<?= $popu_rank['image'] ?>">
                             <h3><?= $popu_rank['name'] ?></h3>
                             <p><?= $popu_rank['population'] ?>人</p>
@@ -272,8 +270,9 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
             <section class="ranking_container">
                 <h2 class="ranking_title">－　保有求人数　－</h2>
                 <section class="ranking_area">
-                    <?php foreach ($firm_ranks as $firm_rank) : ?>
+                    <?php foreach ($firm_ranks as $index => $firm_rank) : ?>
                         <div class="ranking_card">
+                            <div class="ranking_num_box"><p><span class="ranking_num"><?= $index+1 ?></span> 位</p></div>
                             <img src="../../materials/<?= $firm_rank['image'] ?>">
                             <h3><?= $firm_rank['name'] ?></h3>
                             <p><?= $firm_rank['Num_of_firm'] ?>社</p>
@@ -295,12 +294,14 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
         </article>
         <article class="column_wrapper">
             <section class="column_container">
-                <h2>CRAFTとは...</h2>
-                <p>てふぜっそイぇぱれいヅキワでぉオヅコィデゥねピくこピヵリほロぺェにセたヤげデょりあょィィぼなョひゼヤばペヌたぽヸぢぅマぎぃばロヮヴニヅピルデひゾきツはシおかねゕホツヵぽゅヲいせヒねノみナジがぢぜずヴねズゕゃヤフギギるボゴめタゅばなワヤゾブリろわふヨゔゅいゲヮョシヲぱボャヵぱヸヵちぼリぬヸヘたズるヱせソシろダェあノナィラそヹオョヹュをダたらギふヲちポてスギつやびねムスヮづジゅヘヮぁケズれず</p>
+            <input type="checkbox"  id="col_1" class="col_ipt">
+            <label for="col_1" class="col_lable"><h2>CRAFTとは...</h2></label>
+            <div class="col_content"><p>「Craft」とは、株式会社Booserが運営する、「就活エージェントを通して、あなたにピッタリな企業と出会うことができる、就活生向けの情報サイト」です。</p></div>
             </section>
             <section class="column_container">
-                <h2>就活エージェントの種類と豊富さ</h2>
-                <p>てふぜっそイぇぱれいヅキワでぉオヅコィデゥねピくこピヵリほロぺェにセたヤげデょりあょィィぼなョひゼヤばペヌたぽヸぢぅマぎぃばロヮヴニヅピルデひゾきツはシおかねゕホツヵぽゅヲいせヒねノみナジがぢぜずヴねズゕゃヤフギギるボゴめタゅばなワヤゾブリろわふヨゔゅいゲヮョシヲぱボャヵぱヸヵちぼリぬヸヘたズるヱせソシろダェあノナィラそヹオョヹュをダたらギふヲちポてスギつやびねムスヮづジゅヘヮぁケズれず</p>
+                <input type="checkbox"  id="col_2" class="col_ipt">
+                <label for="col_2" class="col_lable"><h2>就活エージェントの種類と豊富さ</h2></label>
+                <div class="col_content"><p>コラム内容</p></div>
             </section>
         </article>
     </main>

@@ -15,22 +15,22 @@
 //     down[2].classList.add("rotate");
 //   }; 
 
-  const menu = document.querySelectorAll(".js-menu");
-  let type = getElementByClassName("")
+  // const menu = document.querySelectorAll(".js-menu");
+  // let type = getElementByClassName("")
 
-  function toggle(event) {
-    console.log(event);
-    const content = document.querySelector(`sort_section_container_${type}`);
-    this.classList.toggle("is-active");
-    content.classList.toggle("is-open");
-  }
+  // function toggle(event) {
+  //   console.log(event);
+  //   const content = document.querySelector(`sort_section_container_${type}`);
+  //   this.classList.toggle("is-active");
+  //   content.classList.toggle("is-open");
+  // }
 
-  for (let i = 0; i < menu.length; i++) {
-    menu[i].addEventListener("click", function() {
-      toggle(menu[i])
-    })
-  }
+  // for (let i = 0; i < menu.length; i++) {
+  //   menu[i].addEventListener("click", function() {
+  //     toggle(menu[i])
+  //   })
+  // }
 
-  function toggle(target) {
-    console.log(target);
-  }
+  // function toggle(target) {
+  //   console.log(target);
+  // }

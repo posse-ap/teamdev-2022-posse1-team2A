@@ -8,8 +8,8 @@ $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
 
 session_start();
 $name = isset($_POST['name'])? htmlspecialchars($_POST['name'], ENT_QUOTES, 'utf-8') : '';
-$agentLists = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
-print_r($agentLists);
+$applyagents = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
+// print_r($applyagents);
 
 
 
@@ -24,7 +24,7 @@ print_r($agentLists);
         
         try {
             //input_post.phpの値を取得
-            if(isset($_POST['last_name'],$_POST['first_name'],$_POST['student_email'],$_POST['student_phone'],$_POST['college'],$_POST['faculty'],$_POST['department'],$_POST['graduation_year'],$_POST['student_address'])){
+            if(isset($_POST['last_name'],$_POST['first_name'],$_POST['student_email'],$_POST['student_phone'],$_POST['birth_year'],$_POST['birth_month'],$_POST['birth_day'],$_POST['college'],$_POST['faculty'],$_POST['department'],$_POST['graduation_year'],$_POST['post_code'],$_POST['address1'],$_POST['address2'],$_POST['address3'],$_POST['address4'])){
                 
                 // $id = $_POST['id'];
                 // $apply_time = $_POST['apply_time'];
@@ -32,33 +32,52 @@ print_r($agentLists);
                 $first_name = $_POST['first_name'];
                 $student_email = $_POST['student_email'];
                 $student_phone = $_POST['student_phone'];
+                $birth_year = $_POST['birth_year'];
+                $birth_month = $_POST['birth_month'];
+                $birth_day = $_POST['birth_day'];
                 $college = $_POST['college'];
                 $faculty = $_POST['faculty'];
                 $department = $_POST['department'];
                 $graduation_year = $_POST['graduation_year'];
-                $student_address = $_POST['student_address'];
+                $post_code = $_POST['post_code'];
+                $address1 = $_POST['address1'];
+                $address2 = $_POST['address2'];
+                $address3 = $_POST['address3'];
+                $address4 = $_POST['address4'];
                 
                 
                 
-                $sql = "INSERT INTO student_list (last_name,first_name,student_email,student_phone,college,faculty,department,graduation_year,student_address) VALUES (:last_name,:first_name,:student_email,:student_phone,:college,:faculty,:department,:graduation_year,:student_address)"; // INSERT文を変数に格納。:nameや:categoryはプレースホルダという、値を入れるための単なる空箱
+                $sql = "INSERT INTO student_list (last_name,first_name,student_email,student_phone,birth_year,birth_month,birth_day,college,faculty,department,graduation_year,post_code,address1,address2,address3,address4) VALUES (:last_name,:first_name,:student_email,:student_phone,:birth_year,:birth_month,:birth_day,:college,:faculty,:department,:graduation_year,:post_code,:address1,:address2,:address3,:address4)"; // INSERT文を変数に格納。:nameや:categoryはプレースホルダという、値を入れるための単なる空箱
                 $stmt = $db->prepare($sql); //挿入する値は空のまま、SQL実行の準備をする
-                $params = array(':last_name'=>$last_name,':first_name'=>$first_name,':student_email'=>$student_email,':student_phone'=>$student_phone,':college'=>$college,':faculty'=>$faculty,':department'=>$department,':graduation_year'=>$graduation_year,':student_address'=>$student_address); // 挿入する値を配列に格納する
+                $params = array(':last_name'=>$last_name,':first_name'=>$first_name,':student_email'=>$student_email,':student_phone'=>$student_phone,':birth_year'=>$birth_year,':birth_month'=>$birth_month,':birth_day'=>$birth_day,':college'=>$college,':faculty'=>$faculty,':department'=>$department,':graduation_year'=>$graduation_year,':post_code'=>$post_code,':address1'=>$address1,':address2'=>$address2,':address3'=>$address3,':address4'=>$address4); // 挿入する値を配列に格納する
                 // $params = array(':student_name' => $student_name, ':category' => $category, ':description' => $description); // 挿入する値を配列に格納する
                 $stmt->execute($params); //挿入する値が入った変数をexecuteにセットしてSQLを実行
                 
-                
+                foreach($applyagents as $name => $applyagent){
+                    $ageNums="select * from apply_agent where agent='$name';";
+                    $agent_nums=$db->query($ageNums)->fetchAll(PDO::FETCH_ASSOC);
+                    $sql3="INSERT INTO student_tags (tag_id,email) VALUE(:tag_id,:email)";
+                    $stmt3 = $db->prepare($sql3); //挿入する値は空のまま、SQL実行の準備をする
+                    foreach($agent_nums as $agent_num){
+                        $agent_numm=$agent_num['id'];
+                        $params3=array(':tag_id'=>$agent_numm,':email'=>$student_email,);
+                        $stmt3->execute($params3); //挿入する値が入った変数をexecuteにセットしてSQLを実行
+
+                    }
+
+                }
                 
                 if(isset($_POST['regist'])){
-                    echo "good";
+                    // echo "good";
                     
                     $sql2="INSERT INTO agent_count (agent_name) VALUES(:agent_name)";
                     $stmt2 = $db->prepare($sql2); //挿入する値は空のまま、SQL実行の準備をする
-                    foreach($agentLists as $name => $agentList){
+                    foreach($applyagents as $name => $applyagent){
                         $params2=array(':agent_name'=>$name);
                         $stmt2->execute($params2); //挿入する値が入った変数をexecuteにセットしてSQLを実行
                     }
                     
-                    require "../../php/mail_test.php";
+                    // require "../../php/mail_test.php";
                     
                 }
     }
@@ -126,19 +145,19 @@ print_r($agentLists);
                         <div class="form_item">
                             <label for="birthdate">生年月日</label>
                             <div class="input_wrapper">
-                                <select name="bdate-year" id="bdate-year">
+                                <select name="birth_year" id="bdate-year">
                                     <option selected=""></option>
                                     <?php for ($i=1; $i<=20; $i++): ?>
-                                    <option value="<?= 1990 + $i; ?>"><?= $i; ?></option>
+                                    <option value="<?= 1990 + $i; ?>"><?= 1990 + $i; ?></option>
                                     <?php endfor; ?>
                                 </select>年
-                                <select name="bdate-month" id="bdate-month">
+                                <select name="birth_month" id="bdate-month">
                                     <option selected=""></option>
                                     <?php for ($i=1; $i<=12; $i++): ?>
                                     <option value="<?= $i; ?>"><?= $i; ?></option>
                                     <?php endfor; ?>
                                 </select>月
-                                <select name="bdate-day" id="bdate-day">
+                                <select name="birth_day" id="bdate-day">
                                     <option selected=""></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -190,7 +209,7 @@ print_r($agentLists);
                         <div class="form_item">
                             <label for="postal_code">郵便番号</label>
                             <div class="input_wrapper">
-                                <input type="text" name="postal_code" id="postal_code" placeholder="郵便番号">
+                                <input type="text" name="post_code" id="postal_code" placeholder="郵便番号">
                             </div>
                         </div>
                     </li>
@@ -198,16 +217,16 @@ print_r($agentLists);
                         <div class="form_item">
                             <label for="student_address">住所</label>
                             <div class="input_wrapper input_address"><p>都道府県</p>
-                                <input type="text" name="address_1" id="address_1" placeholder="例）東京都">
+                                <input type="text" name="address1" id="address_1" placeholder="例）東京都">
                             </div>
                             <div class="input_wrapper input_address"><p>市区町村</p>
-                                <input type="text" name="address_2" id="address_2" placeholder="例）中央区">
+                                <input type="text" name="address2" id="address_2" placeholder="例）中央区">
                             </div>
                             <div class="input_wrapper input_address"><p>番地等</p>
-                                <input type="text" name="address_3" id="address_3" placeholder="○番地○町目">
+                                <input type="text" name="address3" id="address_3" placeholder="○番地○町目">
                             </div>
                             <div class="input_wrapper input_address"><p>建物名・部屋番号等</p>
-                                <input type="text" name="address_4" id="address_4" placeholder="例）コーポ○○101号室">
+                                <input type="text" name="address4" id="address_4" placeholder="例）コーポ○○101号室">
                             </div>
                         </div>
                     </li>

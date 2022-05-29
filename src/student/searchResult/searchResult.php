@@ -176,7 +176,7 @@ try {
                 </form>
                 <form action="">
                     <div class="search_result_card_cart">
-                        <button>カートに入れる</button>
+                        <button>リストに入れる</button>
                     </div>
                 </form>
             </div>

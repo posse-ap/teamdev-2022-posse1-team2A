@@ -164,18 +164,25 @@ CREATE TABLE student_list (
   first_name VARCHAR(200),
   student_email VARCHAR(200),
   student_phone VARCHAR(200),
+  birth_year VARCHAR(200),
+  birth_month VARCHAR(200),
+  birth_day VARCHAR(200),
   college VARCHAR(200),
   faculty VARCHAR(200),
   department VARCHAR(200),
   graduation_year VARCHAR(200),
-  student_address VARCHAR(200),
+  post_code VARCHAR(200),
+  address1 VARCHAR(200),
+  address2 VARCHAR(200),
+  address3 VARCHAR(200),
+  address4 VARCHAR(200),
   PRIMARY KEY(id)
 );
-INSERT INTO student_list (last_name,first_name,student_email,student_phone,college,faculty,department,graduation_year,student_address) values 
-("藤間","裕史","ugkirin@gmail.com","080-4432-3456","スタンフォード大学","CS","CS","24","シリコンバレー"),
-("井戸","宗達","sohtatsu@gmail.com","090-3422-3996","ハーバード大学","経済","経済","24","ボストン"),
-("尾関","なな海","nanami@gmail.com","080-1312-1246","東京大学","商","商","24","東京"),
-("西山","直樹","naoki@gmail.com","030-4552-3456","N予備校","tiktok","tiktok","24","島根");
+INSERT INTO student_list (last_name,first_name,student_email,student_phone,birth_year,birth_month,birth_day,college,faculty,department,graduation_year,post_code,address1,address2,address3,address4) values 
+("藤間","裕史","ugkirin@gmail.com","080-4432-3456","2001","9","15","スタンフォード大学","CS","CS","24","3930483","東京都","港区","3-4-23","グランドメゾン"),
+("井戸","宗達","sohtatsu@gmail.com","090-3422-3996","2001","11","28","ハーバード大学","経済","経済","24","3648902","東京都","渋谷区","2-5-78","スペシャルタウン"),
+("尾関","なな海","nanami@gmail.com","080-1312-1246","2000","12","9","東京大学","商","商","24","3289532","東京都","千代田区","2-4-67","ゴッドバレー"),
+("西山","直樹","naoki@gmail.com","030-4552-3456","2001","5","10","N予備校","tiktok","tiktok","24","2364689","栃木県","栃木市","6-2-45","中田荘");
 
 
 

@@ -24,7 +24,7 @@ $applyStudents = "select * from student_list inner join student_tags on student_
 $apply_students = $db->query($applyStudents)->fetchAll(PDO::FETCH_ASSOC);
 
 $student_count=count($apply_students);
-// print_r($student_count);
+
 // if (isset($_SESSION['email']) && $_SESSION['time'] + 60 * 60 * 24 > time()) {
 //     $_SESSION['time'] = time();
 
@@ -106,11 +106,6 @@ $student_count=count($apply_students);
             </table>
             <div class="footer">
                 <p class="student_count">表示中：<?=$student_count?>人</p>
-                <!-- <div class="page_count_container">
-                    <i class="fa-solid fa-angle-left"></i>
-                    <p class="page_count">1/1 page</p>
-                    <i class="fa-solid fa-angle-right"></i>
-                </div> -->
             </div>
         </section>
     </main>

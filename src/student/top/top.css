@@ -42,8 +42,6 @@ main {
   font-size: 18px;
 }
 
-/* 今backgroundcolorが全体についてる（濃い緑）て、細かい選択肢のボックスの周りの色も同じになってるから分けなきゃいけない */
-
 .sort_section_container_gyoukai,
 .sort_section_container_area,
 .sort_section_container_picky {

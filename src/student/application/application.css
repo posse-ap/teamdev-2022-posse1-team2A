@@ -56,6 +56,9 @@ main {
 }
 
 /******* submit button *******/
+.submit_button {
+  text-align: center;
+}
 .submit_button button{
   background-color: #F3AE56;
   color: #fff;
@@ -63,4 +66,15 @@ main {
   margin: 10px;
   border-radius: 5px;
   font-weight: bold;
+}
+
+/******* レスポンシブ *******/
+@media screen and (min-width: 480px) {
+  .form_wrapper {
+      width: 60%;
+      margin: auto;
+  }
+  .input_wrapper {
+    margin-left: 50%;
+  }
 }

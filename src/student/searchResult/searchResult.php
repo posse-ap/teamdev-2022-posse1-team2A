@@ -148,7 +148,7 @@ try {
     <main>
         <div class="search_result_title">
             <div class="search_result_title_text">ー検索結果ー</div>
-            <div class="search_result_title_counts">(3件)</div>
+            <div class="search_result_title_counts">(<?= count($search_agents) ?>件)</div>
         </div>
         <?php foreach($search_agents as $index => $search_agent):?>
         <div class="search_result_card">

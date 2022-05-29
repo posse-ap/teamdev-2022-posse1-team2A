@@ -38,30 +38,30 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
 
 
 // if(isset($agentLists)){
-    //     foreach($agentLists as $key => $agentList){
-        //         echo $key;
-        //         echo "<br>";
-        //         echo $agentList['intro'];
-        //         echo "<br>";
-        //         echo $agentList['image'];
-        //         echo "<br>";
-        //     }
-        // }
-        
-        // foreach($agent_infos as $agent_){
-            //     // print_r($agent_img);
-            //     $agent_imgs[]=$agent_img['image'];
-            // }
-            
-            // print_r($agent_imgs);
-            
-            
-            // $today_time="select learn_time from learning_info where learn_date=CURDATE();";
-            // $month_time="SELECT learn_time FROM learning_info WHERE LAST_DAY(NOW()) >= learn_date AND DATE_FORMAT(NOW(), '%Y-%m-01') <= learn_date;";
-            // $learn_time="select learn_time from learning_info;";
-            // $languages_data="select * from languages;";
-            // $contents_data="select * from contents;";
-            // $languages_percent="SELECT learn_language, SUM(learn_time) FROM learning_info GROUP BY learn_language;";
+//     foreach($agentLists as $key => $agentList){
+//         echo $key;
+//         echo "<br>";
+//         echo $agentList['intro'];
+//         echo "<br>";
+//         echo $agentList['image'];
+//         echo "<br>";
+//     }
+// }
+
+// foreach($agent_infos as $agent_){
+//     // print_r($agent_img);
+//     $agent_imgs[]=$agent_img['image'];
+// }
+
+// print_r($agent_imgs);
+
+
+// $today_time="select learn_time from learning_info where learn_date=CURDATE();";
+// $month_time="SELECT learn_time FROM learning_info WHERE LAST_DAY(NOW()) >= learn_date AND DATE_FORMAT(NOW(), '%Y-%m-01') <= learn_date;";
+// $learn_time="select learn_time from learning_info;";
+// $languages_data="select * from languages;";
+// $contents_data="select * from contents;";
+// $languages_percent="SELECT learn_language, SUM(learn_time) FROM learning_info GROUP BY learn_language;";
 // $contents_percent="SELECT learn_content, SUM(learn_time) FROM learning_info GROUP BY learn_content;";
 
 // $today_times = $dbh->query($today_time)->fetch(PDO::FETCH_ASSOC);
@@ -165,16 +165,16 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                         <div>業界から探す</div>
                     </label>
                     <section class="sort_section_container_gyoukai" id="sort_section_gyoukai_container">
-                        <?php foreach($industry_tags as $index=>$industry_tag):?>
-                        <section class="gyoukai_section">
-                            <div class="gyoukai_title">
-                                <input name="tag_number[]" type="checkbox" value="<?=$index+12?>" id="gyoukai<?=$index+12?>">
-                                <label for="gyoukai<?=$index+12?>"><?=$industry_tag['tag'];?></label>
-                            </div>
-                        </section>
-                        <?php endforeach;?>
-                        
-                        
+                        <?php foreach ($industry_tags as $index => $industry_tag) : ?>
+                            <section class="gyoukai_section">
+                                <div class="gyoukai_title">
+                                    <input name="tag_number[]" type="checkbox" value="<?= $index + 12 ?>" id="gyoukai<?= $index + 12 ?>">
+                                    <label for="gyoukai<?= $index + 12 ?>"><?= $industry_tag['tag']; ?></label>
+                                </div>
+                            </section>
+                        <?php endforeach; ?>
+
+
                     </section>
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
@@ -185,16 +185,16 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                     <label for="area_ipt" class="ipt_label">
                         <div>求人エリアから探す</div>
                     </label>
-                    
+
                     <section class="sort_section_container_area" id="sort_section_area_container">
-                        <?php foreach($area_tags as $index=>$area_tag):?>
+                        <?php foreach ($area_tags as $index => $area_tag) : ?>
                             <section class="area_section">
                                 <div class="area_title">
-                                <input name="tag_number[]" type="checkbox" value="<?=$index+18?>" id="area<?=$index+18?>">
-                                <label for="area<?=$index+18?>"><?=$area_tag['tag'];?></label>
-                            </div>
-                        </section>
-                        <?php endforeach;?>
+                                    <input name="tag_number[]" type="checkbox" value="<?= $index + 18 ?>" id="area<?= $index + 18 ?>">
+                                    <label for="area<?= $index + 18 ?>"><?= $area_tag['tag']; ?></label>
+                                </div>
+                            </section>
+                        <?php endforeach; ?>
                     </section>
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
@@ -205,17 +205,17 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                     <label for="picky_ipt" class="ipt_label">
                         <div>こだわり条件から探す</div>
                     </label>
-                    
+
                     <section class="sort_section_container_picky" id="sort_section_picky_container">
-                        <?php foreach($favo_tags as $index=>$favo_tag):?>
-                        <section class="picky_section">
-                            <div class="picky_title">
-                                <input name="tag_number[]" type="checkbox" value="<?=$index+1?>" id="picky<?=$index+1?>">
-                                <label for="picky<?=$index+1?>"><?=$favo_tag['tag'];?></label>
-                            </div>
-                        </section>
-                        <?php endforeach;?>
-                        
+                        <?php foreach ($favo_tags as $index => $favo_tag) : ?>
+                            <section class="picky_section">
+                                <div class="picky_title">
+                                    <input name="tag_number[]" type="checkbox" value="<?= $index + 1 ?>" id="picky<?= $index + 1 ?>">
+                                    <label for="picky<?= $index + 1 ?>"><?= $favo_tag['tag']; ?></label>
+                                </div>
+                            </section>
+                        <?php endforeach; ?>
+
                     </section>
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
@@ -230,16 +230,25 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                 <section class="ranking_area">
                     <?php foreach ($rate_ranks as $index => $rate_rank) : ?>
                         <div class="ranking_card">
-                            <div class="ranking_num_box"><p><span class="ranking_num"><?= $index+1 ?></span> 位</p></div>
+                            <div class="ranking_num_box">
+                                <p><span class="ranking_num"><?= $index + 1 ?></span> 位</p>
+                            </div>
+
                             <img src="../../materials/<?= $rate_rank['image'] ?>">
                             <h3><?= $rate_rank['name'] ?></h3>
                             <p><?= $rate_rank['offer_rate'] ?>%</p>
-                            <form action="top.php" method="POST">
-                                <input type="hidden" name="name" value="<?= $rate_rank['name'] ?>">
-                                <input type="hidden" name="intro" value="<?= $rate_rank['text'] ?>">
-                                <input type="hidden" name="image" value="<?= $rate_rank['image'] ?>">
-                                <button type="submit">リストに入れる</button>
-                            </form>
+                            <div class="ranking_card_buttons">
+                                <form action="../agentDetail/agentDetail.php" method="GET">
+                                    <input type="hidden" name="detail" value="<?= $rate_rank['name'] ?>">
+                                    <button type="submit" class="ranking_card_buttons_detail_button">詳細</button>
+                                </form>
+                                <form action="top.php" method="POST">
+                                    <input type="hidden" name="name" value="<?= $rate_rank['name'] ?>">
+                                    <input type="hidden" name="intro" value="<?= $rate_rank['text'] ?>">
+                                    <input type="hidden" name="image" value="<?= $rate_rank['image'] ?>">
+                                    <button type="submit"class="ranking_card_buttons_list_button">リストに入れる</button>
+                                </form>
+                            </div>
                         </div>
 
                     <?php endforeach; ?>
@@ -251,16 +260,24 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                 <section class="ranking_area">
                     <?php foreach ($popu_ranks as $index => $popu_rank) : ?>
                         <div class="ranking_card">
-                            <div class="ranking_num_box"><p><span class="ranking_num"><?= $index+1 ?></span> 位</p></div>
+                            <div class="ranking_num_box">
+                                <p><span class="ranking_num"><?= $index + 1 ?></span> 位</p>
+                            </div>
                             <img src="../../materials/<?= $popu_rank['image'] ?>">
                             <h3><?= $popu_rank['name'] ?></h3>
                             <p><?= $popu_rank['population'] ?>人</p>
-                            <form action="top.php" method="POST">
-                                <input type="hidden" name="name" value="<?= $popu_rank['name'] ?>">
-                                <input type="hidden" name="intro" value="<?= $popu_rank['text'] ?>">
-                                <input type="hidden" name="image" value="<?= $popu_rank['image'] ?>">
-                                <button type="submit">リストに入れる</button>
-                            </form>
+                            <div class="ranking_card_buttons">
+                                <form action="../agentDetail/agentDetail.php" method="GET">
+                                    <input type="hidden" name="detail" value="<?= $rate_rank['name'] ?>">
+                                    <button type="submit" class="ranking_card_buttons_detail_button">詳細</button>
+                                </form>
+                                <form action="top.php" method="POST">
+                                    <input type="hidden" name="name" value="<?= $rate_rank['name'] ?>">
+                                    <input type="hidden" name="intro" value="<?= $rate_rank['text'] ?>">
+                                    <input type="hidden" name="image" value="<?= $rate_rank['image'] ?>">
+                                    <button type="submit"class="ranking_card_buttons_list_button">リストに入れる</button>
+                                </form>
+                            </div>
 
                         </div>
                     <?php endforeach; ?>
@@ -272,16 +289,24 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                 <section class="ranking_area">
                     <?php foreach ($firm_ranks as $index => $firm_rank) : ?>
                         <div class="ranking_card">
-                            <div class="ranking_num_box"><p><span class="ranking_num"><?= $index+1 ?></span> 位</p></div>
+                            <div class="ranking_num_box">
+                                <p><span class="ranking_num"><?= $index + 1 ?></span> 位</p>
+                            </div>
                             <img src="../../materials/<?= $firm_rank['image'] ?>">
                             <h3><?= $firm_rank['name'] ?></h3>
                             <p><?= $firm_rank['Num_of_firm'] ?>社</p>
-                            <form action="top.php" method="POST">
-                                <input type="hidden" name="name" value="<?= $firm_rank['name'] ?>">
-                                <input type="hidden" name="intro" value="<?= $firm_rank['text'] ?>">
-                                <input type="hidden" name="image" value="<?= $firm_rank['image'] ?>">
-                                <button type="submit">リストに入れる</button>
-                            </form>
+                            <div class="ranking_card_buttons">
+                                <form action="../agentDetail/agentDetail.php" method="GET">
+                                    <input type="hidden" name="detail" value="<?= $rate_rank['name'] ?>">
+                                    <button type="submit" class="ranking_card_buttons_detail_button">詳細</button>
+                                </form>
+                                <form action="top.php" method="POST">
+                                    <input type="hidden" name="name" value="<?= $rate_rank['name'] ?>">
+                                    <input type="hidden" name="intro" value="<?= $rate_rank['text'] ?>">
+                                    <input type="hidden" name="image" value="<?= $rate_rank['image'] ?>">
+                                    <button type="submit"class="ranking_card_buttons_list_button">リストに入れる</button>
+                                </form>
+                            </div>
                         </div>
                     <?php endforeach; ?>
 
@@ -294,14 +319,22 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
         </article>
         <article class="column_wrapper">
             <section class="column_container">
-            <input type="checkbox"  id="col_1" class="col_ipt">
-            <label for="col_1" class="col_lable"><h2>CRAFTとは...</h2></label>
-            <div class="col_content"><p>「Craft」とは、株式会社Booserが運営する、「就活エージェントを通して、あなたにピッタリな企業と出会うことができる、就活生向けの情報サイト」です。</p></div>
+                <input type="checkbox" id="col_1" class="col_ipt">
+                <label for="col_1" class="col_lable">
+                    <h2>CRAFTとは...</h2>
+                </label>
+                <div class="col_content">
+                    <p>「Craft」とは、株式会社Booserが運営する、「就活エージェントを通して、あなたにピッタリな企業と出会うことができる、就活生向けの情報サイト」です。</p>
+                </div>
             </section>
             <section class="column_container">
-                <input type="checkbox"  id="col_2" class="col_ipt">
-                <label for="col_2" class="col_lable"><h2>就活エージェントの種類と豊富さ</h2></label>
-                <div class="col_content"><p>コラム内容</p></div>
+                <input type="checkbox" id="col_2" class="col_ipt">
+                <label for="col_2" class="col_lable">
+                    <h2>就活エージェントの種類と豊富さ</h2>
+                </label>
+                <div class="col_content">
+                    <p>コラム内容</p>
+                </div>
             </section>
         </article>
     </main>

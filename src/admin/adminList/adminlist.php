@@ -35,7 +35,7 @@ $agent_counts=$db->query($agentCount)->fetchAll(PDO::FETCH_ASSOC);
                 </form>
             </div>
             <div class="admin_add_button_container">
-                <button class="admin_add_button">エージェントを追加</button>
+                <a class="admin_add_button" href="../add/add.php">エージェントを追加</a>
             </div>
         </section>
         <section class="option_container_2">

@@ -28,7 +28,6 @@ try {
         $stmt->execute($select_id);
         $search_agents = $stmt->fetchAll();
 
-        print_r($search_agents);
 
 
 
@@ -167,10 +166,10 @@ try {
                 <div class="search_result_card_text">
                     <p>豊富な受験ノウハウとサポートたいせで第一志望校合格へ導きます！驚愕の内定率120%！！！！！！！！！</p>
                 </div>
-                <form action="../compare/compare.php" method="post" name="card_buttons" class="search_result_card_buttons" id="compare_form">
+                <form name="card_buttons" class="search_result_card_buttons">
                     <div class="search_result_card_comparison">
                         <label for="agent<?= $index ?>" class="button_comparison">
-                            <input type="checkbox" name="compare_agent[]" id="agent<?= $index ?>" value="<?= $search_agents['name'] ?>">
+                            <input type="checkbox" name="compare_checkbox" id="agent<?= $index ?>" value="<?= $search_agent['name'] ?>">
                             <p>比較</p>
                         </label>
                     </div>
@@ -179,7 +178,6 @@ try {
                     <div class="search_result_card_cart">
                         <button>カートに入れる</button>
                     </div>
-
                 </form>
             </div>
         </div>
@@ -187,18 +185,20 @@ try {
         <!-- 比較modal ここから -->
         <div class="compare_modal_container">
             <div class="compare_modal_wrapper">
-                <section class="compare_modal_header">
-                    <div class="compare_modal_title">比較するエージェント企業</div>
-                    <div class="compare_modal_close">
-                        <button><i class="fa-solid fa-square-xmark fa-lg"></i></button>
+                <form action="../compare/compare.php" method="post" name="card_buttons">
+                    <section class="compare_modal_header">
+                        <div class="compare_modal_title">比較するエージェント企業</div>
+                        <div class="compare_modal_close">
+                            <button type="button"><i class="fa-solid fa-square-xmark fa-lg"></i></button>
+                        </div>
+                    </section>
+                    <div class="compare_item_wrapper">
+                        <!-- ここにカードが入る -->
                     </div>
-                </section>
-                <div class="compare_item_wrapper">
-                    <!-- ここにカードが入る -->
-                </div>
-                <section class="compare_modal_footer">
-                    <button type="submit" form="compare_form">比較する</button>
-                </section>
+                    <section class="compare_modal_footer">
+                        <button type="submit" class="compare_submit_button">比較する</button>
+                    </section>
+                </form>
             </div>
         </div>
         <!-- 比較modal ここまで -->
@@ -214,7 +214,69 @@ try {
             <img src="../../materials/boozer_logo_white.png" alt="boozer Inc.">
         </div>
     </footer>
-    <script src="./searchResult.js"></script>
+    
+    <script type="text/javascript">
+    'use strict'
+    <?php
+    $json_array = json_encode($search_agents);
+    ?>
+    const search_array = <?= $json_array; ?>
+
+    const comparisonButtons = document.querySelectorAll('.button_comparison');
+    const compareModalContainer = document.querySelector('.compare_modal_container');
+    const compareItemWrapper = document.querySelector('.compare_item_wrapper');
+    const buttonClose = document.getElementsByClassName('compare_modal_close')[0];
+    const compareSubmitButton = document.getElementsByClassName('compare_submit_button')[0];
+    const formElementsAll = document.forms;  //各カードのform部分を配列で取得
+
+    buttonClose.addEventListener('click', modalClose);
+    
+    //カードの「比較ボタン」を押したとき
+    for(let i=0; i<formElementsAll.length; i++){
+        if(i%2 === 0){
+            let cb = formElementsAll[i].compare_checkbox;  //各カードのcheckboxを取得
+            cb.addEventListener('change', function () { //checkboxの値が変わった時
+                if (this.checked){
+                    compareModalContainer.style.display = 'block';
+                    addCard(i/2 +1);
+                } else {
+                    let compareItems = document.querySelector(`#agent_card${i/2 +1}`);
+                    compareItems.remove();
+                }
+                if(compareItemWrapper.childElementCount === 0){ //modalにitemがなくなった時
+                    modalClose();
+                }
+            });
+        }
+    }
+    
+    //モーダルの「比較ページへ」を押したとき
+    compareSubmitButton.addEventListener('click', function(){
+        if(compareItemWrapper.childElementCount <= 1){
+            alert('２件以上選択してください');
+        } else {
+            window.open('../compare/compare.html','_blank');
+        }
+    });
+    
+    function addCard(id) {
+        const add_code = `
+            <div class='compare_item' id='agent_card${id}'>
+                <input type="checkbox" name="" value="${search_array[id-1]['name']}" style="display: none;">
+                <label for="agent${id}" class="compare_item_delete"><i class="fa-solid fa-square-xmark fa-lg"></i></label>
+                <div class="compare_item_img_wrapper">
+                    <img src="../../materials/${search_array[id-1]['image']}" alt="${search_array[id-1]['name']}">
+                </div>
+            </div>
+        `;
+        compareItemWrapper.insertAdjacentHTML('beforeend', add_code);
+    };
+
+    function modalClose(){
+        compareModalContainer.style.display = 'none';
+    };
+
+    </script>
 </body>
 
 </html>

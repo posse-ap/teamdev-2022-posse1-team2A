@@ -24,7 +24,9 @@ footer li{
   line-height: 1.4;
   border-right: 1px solid;
 }
-
+footer li:last-child{
+  border-right: none;
+}
 .footer_logo{
   margin: auto 4% auto auto;
 }

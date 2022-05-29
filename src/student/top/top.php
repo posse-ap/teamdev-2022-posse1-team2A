@@ -313,9 +313,9 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                 </section>
             </section>
 
-            <div class="agent_link">
+            <!-- <div class="agent_link">
                 <p>> エージェント企業一覧を見る</p>
-            </div>
+            </div> -->
         </article>
         <article class="column_wrapper">
             <section class="column_container">

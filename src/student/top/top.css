@@ -30,6 +30,7 @@ main {
   width: 90%;
   margin: 20px auto 10px auto;
   padding: 10px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
 }
 
 .ipt_label div{
@@ -166,6 +167,7 @@ main {
   background-color: #fff;
   flex-shrink: 0;
   position: relative;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
 }
 .ranking_num {
   font-size: 22px;
@@ -189,17 +191,19 @@ main {
   height: 1.2rem;
   font-size: 7px;
   color: #fff;
-  /* padding: 1%;
-  margin: 3%; */
+  padding: .5em;
 }
 .ranking_card_buttons_detail_button{
   background-color: #ff894e;
 }
 .ranking_card_buttons_list_button{
   background-color: #F3AE56;
-
 }
 .ranking_card_buttons{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-20%);
   display: flex;
   justify-content: center;
   gap: 5%;
@@ -217,6 +221,7 @@ main {
   margin-bottom: 15px;
   text-align: left;
   background-color: #fff;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
 }
 
 .col_ipt {

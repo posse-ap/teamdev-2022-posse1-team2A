@@ -268,13 +268,13 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                             <p><?= $popu_rank['population'] ?>人</p>
                             <div class="ranking_card_buttons">
                                 <form action="../agentDetail/agentDetail.php" method="GET">
-                                    <input type="hidden" name="detail" value="<?= $rate_rank['name'] ?>">
+                                    <input type="hidden" name="detail" value="<?= $popu_rank['name'] ?>">
                                     <button type="submit" class="ranking_card_buttons_detail_button">詳細</button>
                                 </form>
                                 <form action="top.php" method="POST">
-                                    <input type="hidden" name="name" value="<?= $rate_rank['name'] ?>">
-                                    <input type="hidden" name="intro" value="<?= $rate_rank['text'] ?>">
-                                    <input type="hidden" name="image" value="<?= $rate_rank['image'] ?>">
+                                    <input type="hidden" name="name" value="<?= $popu_rank['name'] ?>">
+                                    <input type="hidden" name="intro" value="<?= $popu_rank['text'] ?>">
+                                    <input type="hidden" name="image" value="<?= $popu_rank['image'] ?>">
                                     <button type="submit"class="ranking_card_buttons_list_button">リストに入れる</button>
                                 </form>
                             </div>
@@ -297,13 +297,13 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                             <p><?= $firm_rank['Num_of_firm'] ?>社</p>
                             <div class="ranking_card_buttons">
                                 <form action="../agentDetail/agentDetail.php" method="GET">
-                                    <input type="hidden" name="detail" value="<?= $rate_rank['name'] ?>">
+                                    <input type="hidden" name="detail" value="<?= $firm_rank['name'] ?>">
                                     <button type="submit" class="ranking_card_buttons_detail_button">詳細</button>
                                 </form>
                                 <form action="top.php" method="POST">
-                                    <input type="hidden" name="name" value="<?= $rate_rank['name'] ?>">
-                                    <input type="hidden" name="intro" value="<?= $rate_rank['text'] ?>">
-                                    <input type="hidden" name="image" value="<?= $rate_rank['image'] ?>">
+                                    <input type="hidden" name="name" value="<?= $firm_rank['name'] ?>">
+                                    <input type="hidden" name="intro" value="<?= $firm_rank['text'] ?>">
+                                    <input type="hidden" name="image" value="<?= $firm_rank['image'] ?>">
                                     <button type="submit"class="ranking_card_buttons_list_button">リストに入れる</button>
                                 </form>
                             </div>

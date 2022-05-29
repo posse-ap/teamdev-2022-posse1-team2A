@@ -174,9 +174,10 @@ try {
                             <p>比較</p>
                         </label>
                     </div>
-                    <div class="search_result_card_cart">
-                        <button>カートに入れる</button>
-                    </div>
+                        <div class="search_result_card_cart">
+            
+                            <button type="submit">リストに入れる</button>
+                        </div>
                 </form>
             </div>
         </div>

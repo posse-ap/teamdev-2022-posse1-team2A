@@ -32,8 +32,8 @@ if (!empty($_POST)) {
         $err_msg['password'] = '半角英数字で入力してください';
     }
     if (empty($err_msg)) {
-        $logincheck="select * from login_info where email='$email';";
-        $passcheck=$db->query($logincheck)->fetchAll(PDO::FETCH_ASSOC);
+        $logincheck = "select * from login_info where email='$email';";
+        $passcheck = $db->query($logincheck)->fetchAll(PDO::FETCH_ASSOC);
 
 
         if ($passcheck[0]['password'] == $password) {
@@ -75,24 +75,40 @@ if (!empty($_POST)) {
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./login.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../student/studentCSS/header.css">
     <title>test</title>
 </head>
 
 <body>
-    <h1>ログイン画面</h1>
-    <form action="./login.php" method="post">
-        <div class="err_msg"><?php echo $err_msg['email']; ?></div>
-        <label for=""><span>メールアドレス</span>
-            <input type="email" name="email" id=""><br>
-        </label>
-        <div class="err_msg"><?php echo $err_msg['password']; ?></div>
-        <label for=""><span>パスワード</span>
-            <input type="text" name="password" id=""><br>
-        </label>
-        <input type="submit" value="送信">
-    </form>
+    <header>
+        <section class="header_container">
+            <div class="header_logo">
+                <img src="../../materials/boozer_logo_white.png" alt="">
+            </div>
+        </section>
+    </header>
+    <!-- <h1>ログイン画面</h1> -->
+    <main>
+        <form action="./login.php" method="post">
+            <div class="err_msg"><?php echo $err_msg['email']; ?></div>
+            <div class="mail_address_wrapper">
+                <div class="mail_address">メールアドレス</div>
+                <input type="email" class="email" name="email">
+            </div>
+            <div class="err_msg"><?php echo $err_msg['password']; ?></div>
+            <div class="password_title_wrapper">
+                <div class="password_title">パスワード</div>
+                <input type="text" name="password" class="password">
+            </div>
+            <div class="login_wrapper">
+                <div class="login_box">
+                    <input type="submit" class="login" value="LOGIN">
+                </div>
+            </div>
+        </form>
+    </main>
 </body>
 
 </html>

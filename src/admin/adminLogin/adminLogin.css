@@ -1,0 +1,46 @@
+main{
+    padding-top: 50px;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.err_msg {
+    color: #ff838b;
+    font-size: .5em;
+}
+
+.mail_address_wrapper, .password_title_wrapper{
+    height: 60px;
+    display: block;
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* .email_title .password_title{
+    box-sizing: border-box;
+    height: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: block;
+    float: left;
+} */
+
+/* .email, .password {
+    display: block;
+    float: right;
+    height: 30px;
+    margin-top: 20px;
+} */
+
+.login_wrapper{
+    text-align: center;
+}
+
+.login_box{
+    width: 40%;
+    margin: 0 auto;
+}

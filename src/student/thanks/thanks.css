@@ -1,0 +1,87 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0%;
+  background-color: #EBEDF1;
+}
+main {
+  padding-top: 50px;
+  text-align: center;
+  min-height: calc(100vh - 75px);
+  font-weight: bold;
+}
+
+/**********************
+        thanks 
+ **********************/
+
+/******* thanks title *******/
+.thanks_title {
+  margin: 1em;
+  color: #235751;
+  font-size: 24px;
+}
+
+/******* thanks message *******/
+.thanks_message {
+  margin: 30px ;
+  line-height: 1.5;
+}
+.thanks_wrapper i{
+  color: #52A49A;
+}
+
+/******* thanks button *******/
+.button_wrapper p{
+  background-color: #F3AE56;
+  color: #fff;
+  padding: .8em;
+  margin: 30px;
+  border-radius: 5px;
+}
+
+/******** column ********/
+.column_wrapper {
+  padding: 15px;
+}
+
+.column_container {
+  margin-bottom: 15px;
+  text-align: left;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
+}
+
+.col_ipt {
+  display: none;
+}
+.column_container h2 {
+  padding: .5em;
+  padding-left: 1em;
+  background-color: #52A49A;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+}
+.column_container h2::before {
+  content: '';
+  width: .3em;
+  height: 1.1em;
+  background-color: #F3AE56;
+  position: absolute;
+  left: .5em;
+}
+.col_content {
+  padding: .5em;
+  height: 0;
+  opacity: 0;
+  padding: 0 10px;
+  transition: .3s;
+  visibility: hidden;
+}
+.col_ipt:checked + .col_lable + .col_content{
+  height: 120px;     /*auto以外で高さ指定*/
+  opacity: 1;
+  padding: 10px;
+  visibility: visible;
+}

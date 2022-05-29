@@ -2,16 +2,36 @@
 /**********************
         footer
  **********************/
- footer{
+  footer{
   height: 75px;
   background-color: #52A49A;
   position: relative;
   display: flex;
 }
+
 footer ul{
   color: #fff;
-  font-size: 12px;
+  font-size: 8px;
+  width: 40% ;
+  flex-wrap: wrap;
+  margin: auto;
+  flex-basis: 50%;
 }
+
+footer li{
+  padding: 0.5em 10px;
+  display: inline-block;
+  line-height: 1.4;
+  border-right: 1px solid;
+}
+footer li:last-child{
+  border-right: none;
+}
+
+.footer_logo{
+  margin: auto 4% auto auto;
+}
+
 .footer_logo img{
-  width: 170px;
+  width: 160px;
 }

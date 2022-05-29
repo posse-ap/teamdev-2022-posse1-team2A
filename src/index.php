@@ -1,6 +1,6 @@
 <?php
 session_start();
-require(dirname(__FILE__) . "/dbconnect.php");
+require "./dbconnect.php";
 
 $stmt = $db->query('SELECT id, title FROM events');
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -26,6 +26,13 @@ print_r($events);
     <a href="./student/application/application.php">申し込み画面</a>
     <a href="./admin/adminList/adminList.php">adminlist</a>
     <a href="./client/studentDetail/studentDetail.php">学生詳細</a>
+    <a href="./student/agentDetail/agentDetail.php">エージェント詳細</a>
+    <a href="./student/searchResult/searchResult.php">検索結果</a>
+    <a href="./client/studentList/studentList.php">学生リスト</a>
+    <a href="./admin/adminDetail/adminDetail.php">契約情報</a>
+    <a href="./client/login/login.php">クライアントログイン</a>
+    <a href="./admin/adminLogin/adminLogin.php">アドミンログイン</a>
+    <a href="./admin/adminList/adminlist.php">アドミンリスト</a>
 
 </ul>
 

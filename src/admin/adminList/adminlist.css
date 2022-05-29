@@ -50,3 +50,9 @@ body{
   border: solid 1px;
   padding: .8rem;
 }
+.detail_button{
+  background-color: #52A49A;
+  color: #fff;
+  border-radius: 5px;
+  padding: 2%;
+}

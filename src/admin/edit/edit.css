@@ -1,0 +1,78 @@
+
+body{
+  background-color: #EBEDF1;
+}
+
+.header_container{
+  background-color: #52A49A;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+main {
+  margin: 30px auto;
+  padding: 5px;
+  position: relative;
+  width: 70%;
+}
+/**********************
+        form 
+ **********************/
+
+/******* form title *******/
+.form_title {
+  margin: 20px;
+  font-weight: bold;
+  color: #235751;
+  text-align: center;
+}
+
+/******* form *******/
+.application_container{
+  margin: auto; 
+}
+.form_wrapper {
+  margin: auto;
+}
+.form_wrapper form{
+  text-align: left;
+}
+.form_list li{
+  padding: 1rem 0;
+  border-bottom: #ccc solid 1px;
+}
+.form_item label {
+  float: left;
+}
+.input_wrapper {
+  margin-left: 50%;
+  overflow-x: scroll;
+}
+.form_item input,
+.form_item textarea {
+  background-color: #fff;
+  border-radius: 5px;
+  border: solid 1px #aaa;
+  font-size: 13px;
+  padding: .2em;
+}
+.option_wrapper{
+  display: flex;
+}
+.input_address {
+  display: block;
+  margin-bottom: .5em;
+}
+
+/******* submit button *******/
+.submit_button{
+  text-align: center;
+}
+.submit_button button{
+  background-color: #F3AE56;
+  color: #fff;
+  padding: .8em;
+  margin: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}

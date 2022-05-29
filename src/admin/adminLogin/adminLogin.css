@@ -1,0 +1,30 @@
+main{
+    padding-top: 50px;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.err_msg {
+    color: #ff838b;
+    font-size: .5em;
+}
+
+.mail_address_wrapper, .password_title_wrapper{
+    height: 60px;
+    display: block;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.login_wrapper{
+    text-align: center;
+}
+
+.login_box{
+    width: 40%;
+    margin: 0 auto;
+}

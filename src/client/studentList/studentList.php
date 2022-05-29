@@ -56,11 +56,11 @@ $student_count=count($apply_students);
 </head>
 <body>
     <header>
-        <section class="header_container">admin - username</section>
+        <section class="header_container">admin - <?=$agentName?>さん</section>
     </header>
     <main>
         <section class="option_container_1">
-            <div class="admin_username_box">user name</div>
+            <div class="admin_username_box"><?=$agentName?>さん</div>
             <div class="admin_search_box">
                 <form action="">
                     <input type="search" name="admin_search" placeholder="キーワードを入力">

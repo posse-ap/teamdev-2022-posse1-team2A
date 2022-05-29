@@ -4,13 +4,11 @@ require "../../dbconnect.php";
 if(isset($_POST)){
     $chosen_compare=$_POST('compare_agent');
     print_r($chosen_compare);
-
 }
 
 $agent_data = "select * from agent_info;";
 
 $agent_infos = $db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
-
 
 ?>
 

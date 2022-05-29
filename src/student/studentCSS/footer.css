@@ -27,6 +27,7 @@ footer li{
 footer li:last-child{
   border-right: none;
 }
+
 .footer_logo{
   margin: auto 4% auto auto;
 }

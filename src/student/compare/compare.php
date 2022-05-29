@@ -1,0 +1,185 @@
+<?php
+require "../../dbconnect.php";
+
+if(isset($_POST)){
+    $chosen_compare=$_POST('compare_agent');
+    print_r($chosen_compare);
+
+}
+
+$agent_data = "select * from agent_info;";
+
+$agent_infos = $db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compare</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../reset.css">
+    <link rel="stylesheet" href="../studentCSS/header.css">
+    <link rel="stylesheet" href="../studentCSS/footer.css">
+    <link rel="stylesheet" href="./compare.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/3ded641fb3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <section class="header_container">
+            <div class="header_logo">
+            <img src="../../materials/syukatudotcom_logo_white.png" alt="就活.com">
+        </div>
+        <div class="list_icon">
+            <a href="#modal">
+            <i class="fa-solid fa-table-list fa-lg"></i>
+            <p>申し込み</p>
+            </a>
+        </div>
+        </section>
+        <!-- modal ここから-->
+        <div class="modal_wrapper" id="modal">
+            <a f="#!" class="modal_overlay"></a>
+            <div class="modal_window">
+            <div class="modal_content">
+                <h2>ー　リスト内容　ー</h2>
+                <section class="modal_agent_list_wrapper">
+                <section class="modal_agent_card">
+                    <div class="modal_agent_name">
+                        <a href="../agentDetail/agentDetail.html" target="_blank" rel="noopener noreferrer"><h3>リクナビ</h3></a>
+                        <button class="modal_agent_delete">削除</button>
+                    </div>
+                    <div class="modal_agent_info">
+                        <img src="../../materials/rikunavi.png" alt="リクナビ">
+                        <p>2023年卒業予定の新卒の皆様と既卒者を対象とした学生と企業を結び付ける、新卒採用の就職情報サイトです。</p>
+                    </div>
+                </section>
+                <section class="modal_agent_card">
+                    <div class="modal_agent_name">
+                        <a href="../agentDetail/agentDetail.html" target="_blank" rel="noopener noreferrer"><h3>リクナビ</h3></a>
+                        <button class="modal_agent_delete">削除</button>
+                    </div>
+                    <div class="modal_agent_info">
+                        <img src="../..//materials/rikunavi.png" alt="リクナビ">
+                        <p>2023年卒業予定の新卒の皆様と既卒者を対象とした学生と企業を結び付ける、新卒採用の就職情報サイトです。</p>
+                    </div>
+                </section>
+                <section class="modal_agent_card">
+                    <div class="modal_agent_name">
+                        <a href="../agentDetail/agentDetail.html" target="_blank" rel="noopener noreferrer"><h3>リクナビ</h3></a>
+                        <button class="modal_agent_delete">削除</button>
+                    </div>
+                    <div class="modal_agent_info">
+                        <img src="../../materials/rikunavi.png" alt="リクナビ">
+                        <p>2023年卒業予定の新卒の皆様と既卒者を対象とした学生と企業を結び付ける、新卒採用の就職情報サイトです。</p>
+                    </div>
+                </section>
+                <section class="modal_agent_card">
+                    <div class="modal_agent_name">
+                        <a href="../agentDetail/agentDetail.html" target="_blank" rel="noopener noreferrer"><h3>リクナビ</h3></a>
+                        <button class="modal_agent_delete">削除</button>
+                    </div>
+                    <div class="modal_agent_info">
+                        <img src="../../materials/rikunavi.png" alt="リクナビ">
+                        <p>2023年卒業予定の新卒の皆様と既卒者を対象とした学生と企業を結び付ける、新卒採用の就職情報サイトです。</p>
+                    </div>
+                    </section>
+                </section>
+                <section class="modal_bottom">
+                <p>リストの中身を確認し、「まとめて無料申し込み」ボタンを押してください。</p>
+                <button>確認して無料申し込み</button>
+                </section>
+            </div>
+            <a href="#!" class="modal_close">×</a>
+            </div>
+        </div>
+        <!-- modal ここまで -->
+    </header>
+    <main>
+        <article>
+            <div class="page_back"><button onclick="history.back()">戻る</button></div>
+            <section class="compare_table_container">
+                <table class="compare_table">
+                    <tr class="logo">
+                        <th>ロゴ</th>
+                        <td><img src="../../materials/maynavi.png" alt="mynavi_logo"></td>
+                        <td><img src="../../materials/rikunavi.png" alt="rikunavi_logo"></td>
+                        <td><img src="../../materials/maynavi.png" alt="mynavi_logo"></td>
+                        <td><img src="../../materials/rikunavi.png" alt="rikunavi_logo"></td>
+                    </tr>
+                    <tr class="agent_name">
+                        <th>エージェント名</th>
+                        <td>マイナビ</td>
+                        <td>リクナビ</td>
+                        <td>マイナビ</td>
+                        <td>リクナビ</td>
+                    </tr>
+                    <tr class="main_industry">
+                        <th>主な業界</th>
+                        <td>就活</td>
+                        <td>就活</td>
+                        <td>就活</td>
+                        <td>就活</td>
+                    </tr>
+                    <tr class="main_area">
+                        <th>拠点地域</th>
+                        <td>東京</td>
+                        <td>東京</td>
+                        <td>東京</td>
+                        <td>東京</td>
+                    </tr>
+                    <tr class="owned_job_offer_number">
+                        <th>保有求人数</th>
+                        <td>20万人</td>
+                        <td>10万人</td>
+                        <td>20万人</td>
+                        <td>10万人</td>
+                    </tr>
+                    <tr class="informal_job_offer_rate">
+                        <th>内定率</th>
+                        <td>90%</td>
+                        <td>80%</td>
+                        <td>90%</td>
+                        <td>80%</td>
+                    </tr>
+                    <tr class="interview_stlye">
+                        <th>面談形態</th>
+                        <td>対面・オンライン</td>
+                        <td>対面・オンライン</td>
+                        <td>対面・オンライン</td>
+                        <td>対面・オンライン</td>
+                    </tr>
+                    <tr class="application_company_limit">
+                        <th>応募社数上限</th>
+                        <td>30社</td>
+                        <td>20社</td>
+                        <td>30社</td>
+                        <td>20社</td>
+                    </tr>
+                </table>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <ul>
+            <li>プライバシーポリシー</li>
+            <li>会社概要</li>
+            <li>ご利用規約</li>
+            <li>お問合せ</li>
+        </ul>
+        <div class="footer_logo">
+            <img src="../../materials/boozer_logo_white.png" alt="boozer Inc.">
+        </div>
+    </footer>
+    <script src=""></script>
+</body>
+</html>

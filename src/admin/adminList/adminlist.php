@@ -1,7 +1,8 @@
 <?php 
 
 require "../../dbconnect.php";
-
+session_start();
+$username=$_SESSION['admin_name'];
 $agentCount="SELECT agent_name, COUNT( agent_name ) FROM agent_count GROUP BY agent_name;";
 
 $agent_counts=$db->query($agentCount)->fetchAll(PDO::FETCH_ASSOC);
@@ -27,7 +28,7 @@ $agent_counts=$db->query($agentCount)->fetchAll(PDO::FETCH_ASSOC);
     </header>
     <main>
         <section class="option_container_1">
-            <div class="admin_username_box">user name</div>
+            <div class="admin_username_box"><?=$username?>さん</div>
             <div class="admin_search_box">
                 <form action="">
                     <input type="search" name="admin_search" placeholder="キーワードを入力">

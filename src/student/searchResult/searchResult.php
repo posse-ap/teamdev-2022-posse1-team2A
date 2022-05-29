@@ -146,10 +146,15 @@ try {
         <!-- modal ここまで -->
     </header>
     <main>
-        <div class="search_result_title">
-            <div class="search_result_title_text">ー検索結果ー</div>
-            <div class="search_result_title_counts">(<?= count($search_agents) ?>件)</div>
-        </div>
+        <section class="search_result_header">
+            <div class="search_result_title">
+                <div class="search_result_title_text">ー検索結果ー</div>
+                <div class="search_result_title_counts">(<?= count($search_agents) ?>件)</div>
+            </div>
+            <div class="search_result_page_back">
+                <div class="page_back_box"><a href="../top/top.php">TOPへ</a></div>
+            </div>
+        </section>
         <?php foreach($search_agents as $index => $search_agent):?>
         <div class="search_result_card">
             <div class="search_result_card_img">

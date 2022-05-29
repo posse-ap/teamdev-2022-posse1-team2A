@@ -14,22 +14,36 @@ main{
 .white {
     color: white;
   }
-/************ title **************/
+/************ result header **************/
+.search_result_header {
+  position: relative;
+}
 .search_result_title{
     width: 100%;
     height: 80px;
     padding: 20px;
 }
-
 .search_result_title_text{
     color: #52A49A;
     font-size: larger;
 }
-
 .search_result_title_counts{
     color: #52A49A;
 }
 
+.search_result_page_back{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+.page_back_box{
+  background-color: #52A49A;
+  color: #fff;
+  font-size: 10px;
+  padding: .5em;
+  border-radius: 4px;
+}
 /************ cards **************/
 .search_result_card{
   height: 150px;

@@ -18,7 +18,7 @@ try {
         // $stmt = $db->prepare($sql);
         // $stmt->execute($chose_tag);
         // var_dump($stmt->fetchAll(PDO::FETCH_ASSOC));
-
+        
         // IN 句に入る値を作成
         $select_id = $_POST['tag_number'];
         $inClause = substr(str_repeat(',?', count($select_id)), 1); // '?,?,?'
@@ -29,17 +29,6 @@ try {
         $stmt->execute($select_id);
         $search_agents = $stmt->fetchAll();
 
-
-
-
-        // print_r($select_id);
-        // print_r($inClause);
-        // print_r($res);
-        // print_r(count($select_id));
-        // print_r($_POST['tag_number']);/
-        // print_r($res);
-        // print_r($sql);
-        // print_r($_SESSION['tags']);
     }
 } catch (Exception $e) {
     print "error!! " . $e->getMessage() . PHP_EOL;

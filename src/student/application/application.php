@@ -9,18 +9,8 @@ $agent_infos=$db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
 session_start();
 $name = isset($_POST['name'])? htmlspecialchars($_POST['name'], ENT_QUOTES, 'utf-8') : '';
 $applyagents = isset($_SESSION['agentLists'])? $_SESSION['agentLists']:[];
-// print_r($applyagents);
 
 
-
-
-// foreach($agent_infos as $agent_info){
-    //     if(isset($_POST["$agent_info"])){
-        //         array_push($apply_agents,"$agent_info");
-        //     }
-        // }
-        // print_r($apply_agents);
-        
         
         try {
             //input_post.phpの値を取得

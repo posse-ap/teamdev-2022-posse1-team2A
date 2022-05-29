@@ -35,59 +35,6 @@ if ($name != '' && $intro != '' && $image != '') {
 }
 $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
 
-
-
-// if(isset($agentLists)){
-//     foreach($agentLists as $key => $agentList){
-//         echo $key;
-//         echo "<br>";
-//         echo $agentList['intro'];
-//         echo "<br>";
-//         echo $agentList['image'];
-//         echo "<br>";
-//     }
-// }
-
-// foreach($agent_infos as $agent_){
-//     // print_r($agent_img);
-//     $agent_imgs[]=$agent_img['image'];
-// }
-
-// print_r($agent_imgs);
-
-
-// $today_time="select learn_time from learning_info where learn_date=CURDATE();";
-// $month_time="SELECT learn_time FROM learning_info WHERE LAST_DAY(NOW()) >= learn_date AND DATE_FORMAT(NOW(), '%Y-%m-01') <= learn_date;";
-// $learn_time="select learn_time from learning_info;";
-// $languages_data="select * from languages;";
-// $contents_data="select * from contents;";
-// $languages_percent="SELECT learn_language, SUM(learn_time) FROM learning_info GROUP BY learn_language;";
-// $contents_percent="SELECT learn_content, SUM(learn_time) FROM learning_info GROUP BY learn_content;";
-
-// $today_times = $dbh->query($today_time)->fetch(PDO::FETCH_ASSOC);
-// $month_times = $dbh->query($month_time)->fetchAll(PDO::FETCH_ASSOC);
-// $learn_times = $dbh->query($learn_time)->fetchAll(PDO::FETCH_ASSOC);
-// $languages_datas = $dbh->query($languages_data)->fetchAll(PDO::FETCH_ASSOC);
-// $contents_datas = $dbh->query($contents_data)->fetchAll(PDO::FETCH_ASSOC);
-// $languages_percents = $dbh->query($languages_percent)->fetchAll(PDO::FETCH_ASSOC);
-// $contents_percents = $dbh->query($contents_percent)->fetchAll(PDO::FETCH_ASSOC);
-
-
-// foreach($month_times as $month_time){
-//     $mounth_sum[]=$month_time['learn_time'];
-// }
-// foreach($learn_times as $study_time){
-//     $learn_sum[]=$study_time['learn_time'];
-// }
-// $month_total=array_sum($mounth_sum);
-// $all_total=array_sum($learn_sum);
-// $timebox=[$today_times['learn_time'],$month_total,$all_total];
-// $time_title=["Today","Month","Total"];
-
-
-
-
-
 ?>
 
 
@@ -164,6 +111,7 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                     <label for="gyoukai_ipt" class="ipt_label">
                         <div>業界から探す</div>
                     </label>
+
                     <section class="sort_section_container_gyoukai" id="sort_section_gyoukai_container">
                         <?php foreach ($industry_tags as $index => $industry_tag) : ?>
                             <section class="gyoukai_section">
@@ -173,9 +121,8 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                                 </div>
                             </section>
                         <?php endforeach; ?>
-
-
                     </section>
+
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
             </section>
@@ -196,6 +143,7 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                             </section>
                         <?php endforeach; ?>
                     </section>
+
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
             </section>
@@ -215,8 +163,8 @@ $agentLists = isset($_SESSION['agentLists']) ? $_SESSION['agentLists'] : [];
                                 </div>
                             </section>
                         <?php endforeach; ?>
-
                     </section>
+
                     <i class="fa-solid fa-sort-down fa-lg"></i>
                 </div>
             </section>

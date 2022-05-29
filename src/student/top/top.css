@@ -141,7 +141,7 @@ main {
 }
 
 /* input:checked + label {
-  background-color:#52A49A;         各選択肢の色変更のやつ。後で戻す
+  background-color:#52A49A;         各選択肢の色変更のやつ
 } */
 
 /*----- ranking -----*/
@@ -182,7 +182,6 @@ main {
 .ranking_card img{
   width: 130px;
   height: 85px;
-  /* background-color: aqua; */
 }
 
 .ranking_card form button{

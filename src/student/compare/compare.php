@@ -1,6 +1,7 @@
 <?php
 require "../../dbconnect.php";
 
+
 if (isset($_POST)) {
     $chosen_compares = $_POST['compare'];
 
@@ -36,6 +37,7 @@ if (isset($_POST)) {
         array_push($agent_industrys, $industry0);
         foreach ($second_tags as $second_tag) {
 
+
             $area0 = array();
             array_push($area0, $second_tag['tag']);
         }
@@ -44,7 +46,6 @@ if (isset($_POST)) {
     // print_r($agent_infos);
     // print_r($agent_industry);
 }
-
 
 
 ?>

@@ -20,22 +20,6 @@ form {
     margin: 20px;
 }
 
-/* .email_title .password_title{
-    box-sizing: border-box;
-    height: 50px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    display: block;
-    float: left;
-} */
-
-/* .email, .password {
-    display: block;
-    float: right;
-    height: 30px;
-    margin-top: 20px;
-} */
-
 .login_wrapper{
     text-align: center;
 }

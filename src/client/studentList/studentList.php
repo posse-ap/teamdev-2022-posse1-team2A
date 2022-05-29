@@ -1,11 +1,45 @@
 <?php
+
+session_start();
 require "../../dbconnect.php";
 
+$login_agent=$_SESSION['email'];
+
+
 $student_data = "select * from student_list;";
-
 $student_infos = $db->query($student_data)->fetchAll(PDO::FETCH_ASSOC);
+$ageName = "select * from agent_info where email='$login_agent';";
+$agent_name = $db->query($ageName)->fetchAll(PDO::FETCH_ASSOC);
+$agentName=$agent_name[0]['name'];
 
+// print_r($agentName);
+
+$ageNum = "select * from apply_agent where agent='$agentName';";
+$agent_num = $db->query($ageNum)->fetchAll(PDO::FETCH_ASSOC);
+
+// print_r($agent_num);
+
+$agentNum=$agent_num[0]['id'];
+$applyStudents = "select * from student_list inner join student_tags on student_list.student_email=student_tags.email where tag_id='$agentNum';";
+$apply_students = $db->query($applyStudents)->fetchAll(PDO::FETCH_ASSOC);
+
+$student_count=count($apply_students);
+// print_r($student_count);
+// if (isset($_SESSION['email']) && $_SESSION['time'] + 60 * 60 * 24 > time()) {
+//     $_SESSION['time'] = time();
+
+//     if (!empty($_POST)) {
+
+
+//         header('Location: http://' . $_SERVER['HTTP_HOST'] . '/client/studentList/studentList.php');
+//         exit();
+//     }
+// } else {
+//     header('Location: http://' . $_SERVER['HTTP_HOST'] . '/client/login/login.php');
+//     exit();
+// }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -54,15 +88,15 @@ $student_infos = $db->query($student_data)->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($student_infos as $student_info):?>
+                    <?php foreach($apply_students as $apply_student):?>
                     <tr>
-                        <td><?=$student_info['last_name']?><?=$student_info['first_name']?></td>
-                        <td><?=$student_info['college']?></td>
-                        <td><?=$student_info['student_email']?></td>
-                        <td><?=$student_info['apply_time']?></td>
+                        <td><?=$apply_student['last_name']?><?=$apply_student['first_name']?></td>
+                        <td><?=$apply_student['college']?></td>
+                        <td><?=$apply_student['student_email']?></td>
+                        <td><?=$apply_student['apply_time']?></td>
                         <td>
                             <form action="../studentDetail/studentDetail.php" method="GET">
-                                <input type="hidden" name="detail" value="<?=$student_info['student_phone']?>">
+                                <input type="hidden" name="detail" value="<?=$apply_student['student_phone']?>">
                                 <input type="submit" value="詳細">
                             </form>
                         </td>
@@ -71,7 +105,7 @@ $student_infos = $db->query($student_data)->fetchAll(PDO::FETCH_ASSOC);
                 </tbody>
             </table>
             <div class="footer">
-                <p class="student_count">表示中：3/3人</p>
+                <p class="student_count">表示中：<?=$student_count?>人</p>
                 <!-- <div class="page_count_container">
                     <i class="fa-solid fa-angle-left"></i>
                     <p class="page_count">1/1 page</p>

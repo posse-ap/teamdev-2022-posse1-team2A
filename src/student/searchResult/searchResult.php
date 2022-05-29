@@ -150,7 +150,7 @@ try {
             <div class="search_result_title_text">ー検索結果ー</div>
             <div class="search_result_title_counts">(3件)</div>
         </div>
-        <?php foreach($search_agents as $search_agent):?>
+        <?php foreach($search_agents as $index => $search_agent):?>
         <div class="search_result_card">
             <div class="search_result_card_img">
                 <img src="../../materials/<?=$search_agent['image']?>">
@@ -164,8 +164,8 @@ try {
                 </div>
                 <form action="" method="post" name="card_buttons" class="search_result_card_buttons">
                     <div class="search_result_card_comparison">
-                        <label for="agent1" class="button_comparison">
-                            <input type="checkbox" name="compare_checkbox" id="agent1" value="agent1">
+                        <label for="agent<?= $index ?>" class="button_comparison">
+                            <input type="checkbox" name="compare_checkbox" id="agent<?= $index ?>" value="agent<?= $index ?>">
                             <p>比較</p>
                         </label>
                     </div>

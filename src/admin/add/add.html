@@ -4,12 +4,179 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>エージェント追加ページ</title>
     <link rel="stylesheet" href="../../reset.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./add.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/3ded641fb3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <header>
+        <section class="header_container">admin</section>
+    </header>
+    <main>
+        <section class="application_container">
+            <div class="form_title">ー　エージェント企業情報登録フォーム　ー</div>
+            <section class="form_wrapper">
+                <form action="" method="post">
+                    <ul class="form_list">
+                        <li>
+                            <div class="form_item">
+                                <label for="agent_name">企業名</label>
+                                <div class="input_wrapper">
+                                    <input type="text" name="agent_name" id="agent_name" placeholder="リクナビ">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label for="rep_name">担当者名</label>
+                                <div class="input_wrapper">
+                                    <input type="text" name="rep_name" id="rep_name" placeholder="例）山田太郎">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label for="agent_email">メールアドレス</label>
+                                <div class="input_wrapper">
+                                    <input type="email" name="agent_email" id="agent_email" placeholder="例）yourname@example.com">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label for="cv_email">CVメールアドレス</label>
+                                <div class="input_wrapper">
+                                    <input type="email" name="cv_email" id="cv_email" placeholder="例）yourname@example.com">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label for="rep_phone">電話番号</label>
+                                <div class="input_wrapper">
+                                    <input type="tel" name="rep_phone" id="rep_phone" placeholder="例）000-0000-000">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label for="agent_url">HP URL</label>
+                                <div class="input_wrapper">
+                                    <input type="url" name="agent_url" id="agent_url" placeholder="例）https://www.google.com">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label for="intro_text">エージェント紹介文</label>
+                                <div class="input_wrapper">
+                                    <textarea name="intro_text" id="intro_text" rows="3" cols="30"></textarea>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label>対応可能業界</label>
+                                <div class="input_wrapper">
+                                    <div class="option_wrapper">
+                                        <input type="checkbox" name="responsible_division" id="gyoukai0">
+                                        <label for="gyoukai0">建設・住宅・不動産</label>
+                                    </div>
+                                    <div class="option_wrapper">
+                                        <input type="checkbox" name="responsible_division" id="gyoukai1">
+                                        <label for="gyoukai1">広告・出版・マスコミ</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label>対応地域</label>
+                                <div class="input_wrapper">
+                                    <div class="option_wrapper">
+                                        <input type="checkbox" name="responsible_area" id="area0">
+                                        <label for="area0">北海道・東海</label>
+                                    </div>
+                                    <div class="option_wrapper">
+                                        <input type="checkbox" name="responsible_area" id="area1">
+                                        <label for="area1">中部</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label>こだわり条件</label>
+                                <div class="input_wrapper">
+                                    <div class="option_wrapper">
+                                        <input type="checkbox" name="picky" id="picky0">
+                                        <label for="picky0">ECアドバイス</label>
+                                    </div>
+                                    <div class="option_wrapper">
+                                        <input type="checkbox" name="picky" id="picky1"><label for="picky1">面接対策</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label>内定率</label>
+                                <div class="input_wrapper">
+                                    <input type="number" name="naiteiritu" id="naiteiritu" placeholder="内定率（%）">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label>利用者数</label>
+                                <div class="input_wrapper">
+                                    <input type="number" name="user_count" id="user_count" placeholder="利用者数">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label>保有求人数</label>
+                                <div class="input_wrapper">
+                                    <input type="number" name="hoyuukyuujinnsuu" id="hoyuukyuujinnsuu" placeholder="保有求人数">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label for="postal_code">郵便番号</label>
+                                <div class="input_wrapper">
+                                    <input type="text" name="postal_code" id="postal_code" placeholder="郵便番号">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <label for="student_address">住所</label>
+                                <div class="input_wrapper input_address"><p>都道府県</p>
+                                    <input type="text" name="address_1" id="address_1" placeholder="例）東京都">
+                                </div>
+                                <div class="input_wrapper input_address"><p>市区町村</p>
+                                    <input type="text" name="address_2" id="address_2" placeholder="例）中央区">
+                                </div>
+                                <div class="input_wrapper input_address"><p>番地等</p>
+                                    <input type="text" name="address_3" id="address_3" placeholder="○番地○町目">
+                                </div>
+                                <div class="input_wrapper input_address"><p>建物名・部屋番号等</p>
+                                    <input type="text" name="address_4" id="address_4" placeholder="例）コーポ○○101号室">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </section>
+            <div class="submit_button">
+                <button type="submit" class="">申し込む</button>
+            </div>
+        </section>
+    </main>
 
     <script src=""></script>
 </body>

@@ -28,7 +28,7 @@ try {
         $stmt->execute($select_id);
         $search_agents = $stmt->fetchAll();
 
-
+        print_r($search_agents);
 
 
 
@@ -167,16 +167,19 @@ try {
                 <div class="search_result_card_text">
                     <p>豊富な受験ノウハウとサポートたいせで第一志望校合格へ導きます！驚愕の内定率120%！！！！！！！！！</p>
                 </div>
-                <form action="" method="post" name="card_buttons" class="search_result_card_buttons">
+                <form action="../compare/compare.php" method="post" name="card_buttons" class="search_result_card_buttons" id="compare_form">
                     <div class="search_result_card_comparison">
                         <label for="agent<?= $index ?>" class="button_comparison">
-                            <input type="checkbox" name="compare_checkbox" id="agent<?= $index ?>" value="agent<?= $index ?>">
+                            <input type="checkbox" name="compare_agent[]" id="agent<?= $index ?>" value="<?= $search_agents['name'] ?>">
                             <p>比較</p>
                         </label>
                     </div>
+                </form>
+                <form action="">
                     <div class="search_result_card_cart">
                         <button>カートに入れる</button>
                     </div>
+
                 </form>
             </div>
         </div>
@@ -194,7 +197,7 @@ try {
                     <!-- ここにカードが入る -->
                 </div>
                 <section class="compare_modal_footer">
-                    <p><a href="../compare/compare.html">比較する</a></p>
+                    <button type="submit" form="compare_form">比較する</button>
                 </section>
             </div>
         </div>

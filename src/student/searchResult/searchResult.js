@@ -9,6 +9,8 @@ const formElements = document.forms;  //各カードのform部分を配列で取
 
 buttonClose.addEventListener('click', modalClose);
 
+// const formElements = evenGet(formElementsAll);
+
 //カードの「比較ボタン」を押したとき
 for(let i=0; i<formElements.length; i++){
   let cb = formElements[i].compare_checkbox;  //各カードのcheckboxを取得
@@ -51,3 +53,13 @@ function addCard(id) {
 function modalClose(){
   compareModalContainer.style.display = 'none';
 };
+
+function evenGet(array) {
+  let eArray = new Array();
+  for(let i; i<array.length; i++){
+    if(i % 2 === 0){
+      eArray.push(array[i]);
+    }
+  }
+  return eArray;
+}

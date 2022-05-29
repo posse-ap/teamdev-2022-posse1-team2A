@@ -91,11 +91,11 @@ if (!empty($_POST)) {
     </header>
     <!-- <h1>ログイン画面</h1> -->
     <main>
-        <form action="./login.php" method="post">
-            <div class="err_msg"><?php echo $err_msg['email']; ?></div>
+        <form action="./adminLogin.php" method="post">
+            <div class="err_msg"><?php echo $err_msg['name']; ?></div>
             <div class="mail_address_wrapper">
-                <div class="mail_address">メールアドレス</div>
-                <input type="email" class="email" name="email">
+                <div class="mail_address">ユーザーネーム</div>
+                <input type="text" class="email" name="name">
             </div>
             <div class="err_msg"><?php echo $err_msg['password']; ?></div>
             <div class="password_title_wrapper">

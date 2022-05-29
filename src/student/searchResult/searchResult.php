@@ -7,6 +7,7 @@ $agent_data = "select * from agent_info;";
 $agent_infos = $db->query($agent_data)->fetchAll(PDO::FETCH_ASSOC);
 
 
+
 try {
     if (isset($_POST['tag_number'])) {
         // $tagg = $_POST['tag_number'];
@@ -251,7 +252,7 @@ try {
     function addCard(id) {
         const add_code = `
             <div class='compare_item' id='agent_card${id}'>
-                <input type="checkbox" name="" value="${search_array[id-1]['name']}" style="display: none;">
+                <input type="hidden" name="compare[]" value="${search_array[id-1]['name']}" style="display: none;">
                 <label for="agent${id}" class="compare_item_delete"><i class="fa-solid fa-square-xmark fa-lg"></i></label>
                 <div class="compare_item_img_wrapper">
                     <img src="../../materials/${search_array[id-1]['image']}" alt="${search_array[id-1]['name']}">

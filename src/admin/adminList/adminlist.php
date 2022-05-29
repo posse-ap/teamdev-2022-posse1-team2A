@@ -53,6 +53,7 @@ $agent_counts=$db->query($agentCount)->fetchAll(PDO::FETCH_ASSOC);
                     <tr>
                         <td>エージェント名</td>
                         <td>件数</td>
+                        <td> </td>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,6 +61,12 @@ $agent_counts=$db->query($agentCount)->fetchAll(PDO::FETCH_ASSOC);
                     <tr>
                         <td><?= $agent_count['agent_name']?></td>
                         <td><?= $agent_count['COUNT( agent_name )']?></td>
+                        <td>
+                            <form action="../adminDetail/adminDetail.php" method="GET" >
+                                <input type="hidden" name="detail" value="<?= $agent_count['agent_name']?>">
+                                <button type="submit" class="detail_button">詳細</button>
+                            </form>
+                        </td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>

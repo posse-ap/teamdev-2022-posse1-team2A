@@ -32,6 +32,7 @@ print_r($events);
     <a href="./admin/adminDetail/adminDetail.php">契約情報</a>
     <a href="./client/login/login.php">クライアントログイン</a>
     <a href="./admin/adminLogin/adminLogin.php">アドミンログイン</a>
+    <a href="./admin/adminList/adminlist.php">アドミンリスト</a>
 
 </ul>
 

@@ -252,7 +252,7 @@ main {
   visibility: hidden;
 }
 .col_ipt:checked + .col_lable + .col_content{
-  height: 100px;     /*auto以外で高さ指定*/
+  height: 120px;     /*auto以外で高さ指定*/
   opacity: 1;
   padding: 10px;
   visibility: visible;

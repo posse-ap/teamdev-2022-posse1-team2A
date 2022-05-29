@@ -187,11 +187,23 @@ main {
 
 .ranking_card form button{
   height: 1.2rem;
-  font-size: 8px;
-  background-color: #F3AE56;
+  font-size: 7px;
   color: #fff;
+  /* padding: 1%;
+  margin: 3%; */
 }
+.ranking_card_buttons_detail_button{
+  background-color: #ff894e;
+}
+.ranking_card_buttons_list_button{
+  background-color: #F3AE56;
 
+}
+.ranking_card_buttons{
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
 .agent_link {
   color: #235751;
 }
